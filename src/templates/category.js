@@ -24,6 +24,7 @@ class CategoryPostsTemplate extends React.Component {
             posts={(
               this.props.data.allMarkdownRemark.edges.map(edge => {
                 edge.node.frontmatter.categoryObject = category
+                edge.node.frontmatter.statusObject = props.data.allPostStatusesJson.edges.find(e => e.node.slug === edge.node.frontmatter.status).node
                 return edge
               })
             )}
@@ -54,6 +55,7 @@ export const categoryBlogListQuery = graphql`
             title
             description
             category
+            status
             date(formatString: "YYYY.MM.DD")
             hero {
               publicURL
@@ -66,10 +68,18 @@ export const categoryBlogListQuery = graphql`
           }
         }
       }
-    },
+    }
     categoriesJson(name: { eq: $category }) {
       name,
       slug
+    }
+    allPostStatusesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
     }
   }
 `

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import InViewMonitor from 'react-inview-monitor';
 import Category from '@components/atoms/category'
+import PostStatusTag from '@components/atoms/post-status-tag'
 import Date from '@components/atoms/date'
 import HeroImage from '@components/atoms/hero-image';
 import PostContent from '@components/molecules/post-content';
@@ -16,6 +17,7 @@ const ArticleSection = ({ post, previous, next}) => (
         <Category text={post.frontmatter.categoryObject.name} link={`/category/${post.frontmatter.categoryObject.slug}/posts`} />
       </div>
       <div className="p-2">
+        <PostStatusTag status={post.frontmatter.statusObject} />
         <h1 className="text-2xl lg:text-3xl font-bold my-1">{post.frontmatter.title}</h1>
         <p className="text-sm text-gray-600 my-1">{post.frontmatter.description}</p>
         <Date date={post.frontmatter.date} />

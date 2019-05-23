@@ -21,6 +21,7 @@ class BlogPostsTemplate extends React.Component {
             posts={(
               this.props.data.allMarkdownRemark.edges.map(edge => {
                 edge.node.frontmatter.categoryObject = this.props.data.allCategoriesJson.edges.find(e => e.node.name === edge.node.frontmatter.category).node
+                edge.node.frontmatter.statusObject = this.props.data.allPostStatusesJson.edges.find(e => e.node.slug === edge.node.frontmatter.status).node
                 return edge
               })
             )}
@@ -50,6 +51,7 @@ export const blogListQuery = graphql`
             title
             description
             category
+            status
             date(formatString: "YYYY.MM.DD")
             hero {
               publicURL
@@ -64,6 +66,14 @@ export const blogListQuery = graphql`
       }
     }
     allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
+    }
+    allPostStatusesJson {
       edges {
         node {
           name,

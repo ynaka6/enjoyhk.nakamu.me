@@ -12,6 +12,7 @@ const IndexPage = ({ data }) => (
       posts={(
         data.allMarkdownRemark.edges.map(edge => {
           edge.node.frontmatter.categoryObject = data.allCategoriesJson.edges.find(e => e.node.name === edge.node.frontmatter.category).node
+          edge.node.frontmatter.statusObject = data.allPostStatusesJson.edges.find(e => e.node.slug === edge.node.frontmatter.status).node
           return edge
         })
       )}
@@ -39,6 +40,7 @@ export const query = graphql`
             title
             description
             category
+            status
             date(formatString: "YYYY.MM.DD"),
             hero {
               publicURL
@@ -54,6 +56,14 @@ export const query = graphql`
       }
     }
     allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
+    }
+    allPostStatusesJson {
       edges {
         node {
           name,
