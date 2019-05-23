@@ -13,8 +13,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   // Netlifyの_redirectsファイルを生成
   createRedirect({
-    fromPath: 'https://gatsby-starter-portfolio-nnn.netlify.com/*',
-    toPath: 'https://gatsby-starter-portfolio.nakamu.life/:splat',
+    fromPath: 'https://enjoyhk-blog.netlify.com/*',
+    toPath: 'https://enjoyhk.nakamu.life/:splat',
     isPermanent: true,
     force: true
   })
