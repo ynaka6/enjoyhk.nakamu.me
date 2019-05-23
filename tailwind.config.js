@@ -9,6 +9,7 @@ module.exports = {
       // SNS
       twitter: '#38A1F3',
       instagram: '#000',
+      feedly: '#2bb24c',
 
       transparent: 'transparent',
 

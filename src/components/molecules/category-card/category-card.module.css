@@ -5,7 +5,7 @@
     @apply w-full relative;
 }
 .image {
-    @apply rounded-lg h-24;
+    @apply rounded-lg h-20;
 }
 .overlay {
     @apply absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-lg;
@@ -25,7 +25,7 @@
         @apply w-1/4;
     }
     .image {
-        @apply h-40;
+        @apply h-32;
     }
 }
 @screen xl {
