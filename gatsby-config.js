@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: `EnjoyHK`,
+    title: `Enjoy`,
     description: `香港移住を自由に楽しく共有していくブログ`,
     author: `@nakanakamu0828`,
     siteUrl: process.env.SITE_URL
