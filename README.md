@@ -8,6 +8,8 @@
   香港移住を自由に楽しく共有していくブログ
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6e668e0a-228a-4c80-b62b-e0bae94d1f13/deploy-status)](https://app.netlify.com/sites/enjoyhk-blog/deploys)
+
 
 このブログは、GatsbyJS + TailwindCSSを利用して構築されています。
 
