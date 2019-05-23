@@ -1,0 +1,37 @@
+.header {
+    @apply fixed w-full z-10 top-0 bg-white border-b border-gray-400;
+}
+.container {
+    @apply mx-auto;
+}
+.box {
+    @apply flex justify-between items-center py-5 px-4;
+}
+.title {
+    @apply text-3xl
+}
+
+
+@screen sm {
+    .container {
+        max-width: theme('screens.sm');
+    }
+}
+@screen md {
+    .container {
+        max-width: theme('screens.md');
+    }
+}
+@screen lg {
+    .container {
+        max-width: theme('screens.lg');
+    }
+    .box {
+        @apply px-5;
+    }
+}
+@screen xl {
+    .container {
+        max-width: theme('screens.xl');
+    }
+}

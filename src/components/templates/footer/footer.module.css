@@ -1,0 +1,35 @@
+.container {
+    @apply mt-10 p-6 mx-auto px-4;
+}
+.leader-board {
+    @apply flex flex-row justify-center mt-4 mb-10;
+}
+.copyright {
+    @apply w-full text-xs text-center;
+}
+.made-with {
+    @apply flex items-center justify-center text-xs text-center mt-4;
+}
+@screen sm {
+    .container {
+        max-width: theme('screens.sm');
+    }
+    .copyright {
+        @apply text-sm;
+    }
+}
+@screen md {
+    .container {
+        max-width: theme('screens.md');
+    }
+}
+@screen lg {
+    .container {
+        max-width: theme('screens.lg');
+    }
+}
+@screen xl {
+    .container {
+        max-width: theme('screens.xl');
+    }
+}

@@ -1,0 +1,53 @@
+.content {
+    @apply p-4 pt-10 leading-loose;
+}
+
+.content h2 {
+    @apply mt-6 mb-2 font-bold text-2xl;
+}
+.content h2:first-child {
+    @apply text-center;
+}
+.content h2:first-child + ul {
+    margin-top: -4rem;
+    @apply pt-20 pb-5 pl-10 mb-10 ml-0 bg-gray-100 border leading-loose;
+}
+.content h2:not(first-child) + ul {
+    @apply mt-2;
+}
+.content h3 {
+    @apply my-2 font-bold text-xl;
+}
+.content p, .content ul {
+    @apply mb-4;
+}
+.content blockquote {
+    @apply relative italic text-gray-600 bg-gray-200 mb-4 py-4 px-10;
+}
+.content blockquote:before {
+    content: '"';
+    @apply inline-block absolute text-gray-700 text-3xl top-0 left-0 pl-4 pt-2;
+}
+.content blockquote p {
+    @apply p-0 mt-4;
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: theme('padding.6');
+}
+.content ol {
+    list-style-type: decimal;
+    padding-left: theme('padding.6');
+}
+
+.content table {
+    @apply border w-full my-6;
+}
+.content table > thead > tr > th,
+.content table > tbody > tr > th {
+  @apply text-gray-800 bg-gray-400 border p-2;
+}
+.content table > tbody > tr > td {
+  @apply border p-2;
+}

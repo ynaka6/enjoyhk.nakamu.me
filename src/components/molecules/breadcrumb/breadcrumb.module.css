@@ -1,0 +1,49 @@
+.breadcrumb-nav {
+    @apply w-full overflow-x-scroll whitespace-no-wrap;
+}
+.container {
+    @apply mx-auto h-full;
+}
+.breadcrumb {
+    @apply flex text-gray-600 px-4 py-6 overflow-x-scroll whitespace-no-wrap;
+}
+.breadcrumb::-webkit-scrollbar {
+    @apply hidden;
+}
+.breadcrumb > li {
+    @apply flex items-center;
+}
+.breadcrumb > li + li:before {
+    content: '\0227B';
+    @apply mx-2;
+}
+.breadcrumb > li a {
+    @apply font-bold no-underline;
+}
+.breadcrumb > li span {
+    @apply text-black;
+}
+
+
+@screen sm {
+    .container {
+        max-width: theme('screens.sm');
+    }
+}
+@screen md {
+    .container {
+        max-width: theme('screens.md');
+    }
+}
+@screen lg {
+    .container {
+        max-width: theme('screens.lg');
+    }
+}
+@screen xl {
+    .container {
+        max-width: theme('screens.xl');
+    }
+}
+
+

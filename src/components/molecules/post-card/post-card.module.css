@@ -1,0 +1,43 @@
+.card {
+    @apply bg-white mb-2 px-4 py-4;
+    background-image: linear-gradient(
+        to top,
+        theme('colors.gray.100'),
+        theme('colors.white')
+    );
+}
+.card:hover {
+    transform: translateY(-.25rem);
+    @apply shadow;
+}
+
+.category {
+    @apply w-full flex justify-center mb-4;
+}
+
+.content {
+    @apply flex flex-col-reverse;
+}
+.content-image {
+    @apply mb-2;
+}
+
+@screen sm {
+}
+@screen md {
+}
+@screen lg {
+    .content {
+        @apply flex-row;
+    }
+    .content-title {
+        @apply w-2/3  pr-2;
+    }
+    .content-image {
+        @apply w-1/3;
+    }
+}
+@screen xl {
+}
+
+

@@ -1,0 +1,34 @@
+.card {
+    @apply w-1/2 p-2;
+}
+.content {
+    @apply w-full relative;
+}
+.image {
+    @apply rounded-lg h-24;
+}
+.overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-lg;
+}
+.title {
+    @apply absolute w-full text-center text-xl text-white font-bold;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+@screen sm {
+}
+@screen md {
+}
+@screen lg {
+    .card {
+        @apply w-1/4;
+    }
+    .image {
+        @apply h-40;
+    }
+}
+@screen xl {
+}
+
+

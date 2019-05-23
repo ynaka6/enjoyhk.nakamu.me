@@ -1,0 +1,6 @@
+.card {
+    @apply w-full bg-white border px-5 py-5 rounded-lg;
+}
+.title {
+    @apply font-bold mb-3;
+}

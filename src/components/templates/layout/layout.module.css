@@ -1,0 +1,37 @@
+.container {
+    @apply w-full flex flex-wrap mx-auto px-2 pt-8 mt-16;
+}
+.main {
+    @apply w-full pb-8 text-gray-900 leading-normal;
+}
+.sidemenu {
+    @apply w-full text-xl text-gray-800 leading-normal;
+}
+
+@screen sm {
+    .container {
+        max-width: theme('screens.sm');
+    }
+}
+@screen md {
+    .container {
+        max-width: theme('screens.md');
+    }
+}
+@screen lg {
+    .container {
+        max-width: theme('screens.lg');
+        @apply pt-12;
+    }
+    .main {
+        @apply w-2/3 mt-0 pr-6;
+    }
+    .sidemenu {
+        @apply w-1/3 pl-6;
+    }
+}
+@screen xl {
+    .container {
+        max-width: theme('screens.xl');
+    }
+}
