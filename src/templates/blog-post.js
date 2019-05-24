@@ -38,7 +38,12 @@ class BlogPostTemplate extends React.Component {
               { to: `/post${post.fields.slug}`, label: post.frontmatter.title, active: true },
             ]}
             />
-            <ArticleSection post={post} previous={previous} next={next} />
+            <ArticleSection
+              location={this.props.location}
+              post={post}
+              previous={previous}
+              next={next}
+            />
           </div>
         </div>
       </Layout>

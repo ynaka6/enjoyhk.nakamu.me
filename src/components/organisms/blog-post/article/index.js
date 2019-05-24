@@ -20,8 +20,8 @@ import {
   PocketIcon,
 } from 'react-share';
 
-const ArticleSection = ({ post, previous, next}) => {
-  const articleUrl = window.location.href
+const ArticleSection = ({ location, post, previous, next}) => {
+  const articleUrl = location.href
   return (
     <InViewMonitor
       classNameNotInView='inview-section-hidden'
