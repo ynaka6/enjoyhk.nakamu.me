@@ -12,6 +12,10 @@ const IndexPage = ({ data }) => (
       posts={(
         data.allMarkdownRemark.edges.map(edge => {
           edge.node.frontmatter.categoryObject = data.allCategoriesJson.edges.find(e => e.node.name === edge.node.frontmatter.category).node
+          edge.node.frontmatter.tagObjects = edge.node.frontmatter.tags.map(t => {
+            const tagItem = data.allTagsJson.edges.find(e => e.node.name === t)
+            return tagItem ? tagItem.node : null
+          })
           edge.node.frontmatter.statusObject = data.allPostStatusesJson.edges.find(e => e.node.slug === edge.node.frontmatter.status).node
           return edge
         })
@@ -57,6 +61,14 @@ export const query = graphql`
       }
     }
     allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
+    }
+    allTagsJson {
       edges {
         node {
           name,

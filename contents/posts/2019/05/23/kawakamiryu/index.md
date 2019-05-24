@@ -2,7 +2,7 @@
 title: "「川上龍」で石焼チャーハンを食べて来ました"
 description: "よくランチに利用している「川上龍」の紹介です"
 category: "グルメ"
-tags: ['香港', '尖沙咀', 'チムサーチョイ', '四川料理']
+tags: ['香港', '尖沙咀', '四川料理']
 date: "2019-05-23"
 hero: ../../../../../images/20190523-kawakamiryu-hero-image.png
 status: writting

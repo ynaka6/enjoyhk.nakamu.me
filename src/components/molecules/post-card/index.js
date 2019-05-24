@@ -22,7 +22,7 @@ const PostCard = ({ post }) => {
           </div>
           <p className="text-grey-darker text-sm mb-2">{post.frontmatter.description}{" "}</p>
           <div class="my-2">
-            {post.frontmatter.tags.map(tag => <Tag text={tag} />)}
+            {post.frontmatter.tagObjects.map(tag => <Tag tag={tag} />)}
           </div>
           <Date date={post.frontmatter.date} />
         </div>

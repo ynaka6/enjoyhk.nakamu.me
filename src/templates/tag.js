@@ -6,24 +6,24 @@ import Breadcrumb from "@components/molecules/breadcrumb"
 import Blog from "@components/organisms/blog-posts/blog"
 
 
-class CategoryPostsTemplate extends React.Component {
+class TagPostsTemplate extends React.Component {
   render() {
     const props = this.props
-    const category = props.data.categoriesJson
+    const tag = props.data.tagsJson
     return (
       <Layout>
-        <SEO title={`${category.name}に関する一覧`} keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title={`${tag.name}に関する一覧`} keywords={[`gatsby`, `application`, `react`]} />
         <Breadcrumb breadcrumbs={[
             { to: '/', label: 'Home' },
             { to: '/posts', label: '記事一覧' },
-            { to: `/category/${category.slug}/posts`, label: `${category.name}に関する一覧`, active: true },
+            { to: `/tag/${tag.slug}/posts`, label: `${tag.name}に関する一覧`, active: true },
           ]}
         />
         <div className="flex flex-col">
           <Blog
             posts={(
               this.props.data.allMarkdownRemark.edges.map(edge => {
-                edge.node.frontmatter.categoryObject = category
+                edge.node.frontmatter.categoryObject = props.data.allCategoriesJson.edges.find(e => e.node.name === edge.node.frontmatter.category).node
                 edge.node.frontmatter.tagObjects = edge.node.frontmatter.tags.map(t => {
                   const tagItem = props.data.allTagsJson.edges.find(e => e.node.name === t)
                   return tagItem ? tagItem.node : null
@@ -40,12 +40,12 @@ class CategoryPostsTemplate extends React.Component {
   }
 }
 
-export default CategoryPostsTemplate
+export default TagPostsTemplate
 
-export const categoryBlogListQuery = graphql`
-  query categoryBlogListQuery($category: String, $skip: Int!, $limit: Int!) {
+export const tagBlogListQuery = graphql`
+  query tagBlogListQuery($skip: Int!, $limit: Int!, $tag: String!) {
     allMarkdownRemark(
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
@@ -74,9 +74,13 @@ export const categoryBlogListQuery = graphql`
         }
       }
     }
-    categoriesJson(name: { eq: $category }) {
-      name,
-      slug
+    allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
     }
     allTagsJson {
       edges {
@@ -85,6 +89,10 @@ export const categoryBlogListQuery = graphql`
           slug        
         }
       }
+    }
+    tagsJson(name: { eq: $tag }) {
+      name,
+      slug
     }
     allPostStatusesJson {
       edges {

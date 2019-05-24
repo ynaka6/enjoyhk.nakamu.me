@@ -10,9 +10,14 @@ import ArticleSection from "@components/organisms/blog-post/article"
 class BlogPostTemplate extends React.Component {
   render() {
     const categories = this.props.data.allCategoriesJson.edges
+    const tags = this.props.data.allTagsJson.edges
     const statuses = this.props.data.allPostStatusesJson.edges
     const post = this.props.data.markdownRemark
     post.frontmatter.categoryObject = categories.find(e => e.node.name === post.frontmatter.category).node
+    post.frontmatter.tagObjects = post.frontmatter.tags.map(t => {
+      const tagItem = tags.find(e => e.node.name === t)
+      return tagItem ? tagItem.node : null
+    })
     post.frontmatter.statusObject = statuses.find(e => e.node.slug === post.frontmatter.status).node
 
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -76,6 +81,14 @@ export const pageQuery = graphql`
       }
     }
     allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
+    }
+    allTagsJson {
       edges {
         node {
           name,

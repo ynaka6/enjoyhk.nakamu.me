@@ -21,6 +21,10 @@ class BlogPostsTemplate extends React.Component {
             posts={(
               this.props.data.allMarkdownRemark.edges.map(edge => {
                 edge.node.frontmatter.categoryObject = this.props.data.allCategoriesJson.edges.find(e => e.node.name === edge.node.frontmatter.category).node
+                edge.node.frontmatter.tagObjects = edge.node.frontmatter.tags.map(t => {
+                  const tagItem = this.props.data.allTagsJson.edges.find(e => e.node.name === t)
+                  return tagItem ? tagItem.node : null
+                })
                 edge.node.frontmatter.statusObject = this.props.data.allPostStatusesJson.edges.find(e => e.node.slug === edge.node.frontmatter.status).node
                 return edge
               })
@@ -67,6 +71,14 @@ export const blogListQuery = graphql`
       }
     }
     allCategoriesJson {
+      edges {
+        node {
+          name,
+          slug        
+        }
+      }
+    }
+    allTagsJson {
       edges {
         node {
           name,

@@ -22,7 +22,7 @@ const ArticleSection = ({ post, previous, next}) => (
         <h1 className="text-2xl lg:text-3xl font-bold my-1">{post.frontmatter.title}</h1>
         <p className="text-sm text-gray-600 my-1">{post.frontmatter.description}</p>
         <div class="my-2">
-          {post.frontmatter.tags.map(tag => <Tag text={tag} />)}
+          {post.frontmatter.tagObjects.map(tag => <Tag tag={tag} />)}
         </div>
         <Date date={post.frontmatter.date} />
       </div>

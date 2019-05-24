@@ -3,9 +3,9 @@ import React from "react"
 import styles from "./tag.module.css"
 
 
-const Tag = ({ text }) => {
+const Tag = ({ tag }) => {
   return (
-    <Link to="" className={styles.button}>{text}</Link>
+    <Link to={`/tag/${tag.slug}/posts`} className={styles.button}>{tag.name}</Link>
   )
 }
 

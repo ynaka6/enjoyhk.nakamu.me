@@ -24,6 +24,7 @@ exports.createPages = ({ graphql, actions }) => {
   const blogPosts = path.resolve(`./src/templates/blog-posts.js`)
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const categoryBlogPosts = path.resolve(`./src/templates/category.js`)
+  const tagBlogPosts = path.resolve(`./src/templates/tag.js`)
   return graphql(
     `
       {
@@ -39,6 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 title
                 category
+                tags
               }
             }
           }
@@ -46,6 +48,14 @@ exports.createPages = ({ graphql, actions }) => {
         allCategoriesJson {
           edges{
             node{
+              name,
+              slug        
+            }
+          }
+        }
+        allTagsJson {
+          edges {
+            node {
               name,
               slug        
             }
@@ -61,6 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
     // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges
     const categories = result.data.allCategoriesJson.edges
+    const tags = result.data.allTagsJson.edges
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -106,6 +117,27 @@ exports.createPages = ({ graphql, actions }) => {
             component: categoryBlogPosts,
             context: {
               category: category.node.name,
+              limit: postsPerPage,
+              skip: i * postsPerPage,
+              numPages,
+              currentPage: i + 1,
+            },
+          })
+        })
+      }
+    })
+
+    // タグページ
+    tags.forEach((tag, index) => {
+      const tagPosts = posts.filter(p => p.node.frontmatter.tags.indexOf(tag.node.name))
+      if (tagPosts.length > 0) {
+        const numPages = Math.ceil(tagPosts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, i) => {
+          createPage({
+            path: i === 0 ? `/tag/${tag.node.slug}/posts` : `/tag/${tag.node.slug}/posts/${i + 1}`,
+            component: tagBlogPosts,
+            context: {
+              tag: tag.node.name,
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
