@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import HeroImage from '@components/atoms/hero-image'
 import Category from '@components/atoms/category'
+import Tag from '@components/atoms/tag'
 import PostStatusTag from '@components/atoms/post-status-tag'
 import Date from '@components/atoms/date'
 import styles from "./post-card.module.css"
@@ -20,6 +21,9 @@ const PostCard = ({ post }) => {
             <PostStatusTag status={post.frontmatter.statusObject} />
           </div>
           <p className="text-grey-darker text-sm mb-2">{post.frontmatter.description}{" "}</p>
+          <div class="my-2">
+            {post.frontmatter.tags.map(tag => <Tag text={tag} />)}
+          </div>
           <Date date={post.frontmatter.date} />
         </div>
         <div className={styles.contentImage}>

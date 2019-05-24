@@ -40,6 +40,7 @@ export const query = graphql`
             title
             description
             category
+            tags
             status
             date(formatString: "YYYY.MM.DD"),
             hero {

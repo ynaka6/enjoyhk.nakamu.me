@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import InViewMonitor from 'react-inview-monitor';
 import Category from '@components/atoms/category'
+import Tag from '@components/atoms/tag'
 import PostStatusTag from '@components/atoms/post-status-tag'
 import Date from '@components/atoms/date'
 import HeroImage from '@components/atoms/hero-image';
@@ -20,6 +21,9 @@ const ArticleSection = ({ post, previous, next}) => (
         <PostStatusTag status={post.frontmatter.statusObject} />
         <h1 className="text-2xl lg:text-3xl font-bold my-1">{post.frontmatter.title}</h1>
         <p className="text-sm text-gray-600 my-1">{post.frontmatter.description}</p>
+        <div class="my-2">
+          {post.frontmatter.tags.map(tag => <Tag text={tag} />)}
+        </div>
         <Date date={post.frontmatter.date} />
       </div>
       <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
