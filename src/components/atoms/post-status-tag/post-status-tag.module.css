@@ -2,9 +2,9 @@
     @apply px-3 py-1 border rounded-lg font-bold text-gray-500 text-xs whitespace-no-wrap;
 }
 .tag-writting {
-    @apply px-3 py-1 border border-yellow-400 bg-yellow-100 rounded-lg font-bold text-yellow-500 text-xs whitespace-no-wrap;
+    @apply px-3 py-1 border border-yellow-400 bg-yellow-100 rounded-lg font-bold text-yellow-600 text-xs whitespace-no-wrap;
 }
 .tag-published {
-    @apply px-3 py-1 border border-blue-400 bg-blue-100 rounded-lg font-bold text-blue-500 text-xs whitespace-no-wrap;
+    @apply px-3 py-1 border border-blue-400 bg-blue-100 rounded-lg font-bold text-blue-600 text-xs whitespace-no-wrap;
 }
 

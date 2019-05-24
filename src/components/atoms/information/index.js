@@ -6,7 +6,9 @@ import styles from "./information.module.css"
 const Information = ({ message }) => {
   return (
     <div className={styles.box}>
-      <InfoStandardSolidIcon className={styles.icon} />
+      <div>
+        <InfoStandardSolidIcon className={styles.icon} />
+      </div>
       <p className={styles.message}>
         {message}
       </p>

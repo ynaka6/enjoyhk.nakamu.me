@@ -1,5 +1,5 @@
 .container {
-    @apply w-full flex flex-wrap mx-auto px-2 pt-8 mt-16;
+    @apply w-full flex flex-wrap mx-auto px-2 pt-8 mt-8;
 }
 .main {
     @apply w-full pb-8 text-gray-900 leading-normal;

@@ -4,7 +4,7 @@ module.exports = {
   separator: ':',
   theme: {
     colors: {
-      primary: '#ff5f5f',
+      primary: '#ff4646',
       
       // SNS
       twitter: '#38A1F3',

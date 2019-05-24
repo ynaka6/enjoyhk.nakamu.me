@@ -1,5 +1,5 @@
 .card {
-    @apply w-1/2 p-2;
+    @apply w-1/2 p-1;
 }
 .content {
     @apply w-full relative;

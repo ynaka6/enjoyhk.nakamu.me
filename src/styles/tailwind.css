@@ -43,7 +43,7 @@ svg {
 .logo > sup {
     text-shadow: none;
     top: -1em;
-    @apply text-gray-600 text-base;
+    @apply text-gray-700 text-xs;
 }
   
 .inview-section-hidden {

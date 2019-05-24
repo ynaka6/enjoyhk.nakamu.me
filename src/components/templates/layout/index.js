@@ -56,10 +56,10 @@ class Layout extends React.Component  {
               scrollY={this.state.y}
             />
             <div className={styles.container}>
-              <div className="w-full flex flex-wrap justify-center mb-5">
+              <div className="w-full flex flex-wrap justify-center mb-2">
                 {data.allCategoriesJson.edges.map(({ node }) => <CategoryCard key={node.slug} category={node} />)}
               </div>
-              <div className="w-full mb-5">
+              <div className="w-full mb-2">
                 <Information message="香港在住リモートエンジニア「なかむ」の海外生活雑記ブログ。日々の生活や旅行など日本とは異なることや日本人には疑問に思うことをスレッド形式で記録しています。" />
               </div>
               <main className={styles.main}>
