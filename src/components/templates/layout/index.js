@@ -47,6 +47,14 @@ class Layout extends React.Component  {
                 }
               }
             }
+            allTagsJson {
+              edges{
+                node{
+                  name,
+                  slug        
+                }
+              }
+            }
           }
         `}
         render={data => (
@@ -66,7 +74,7 @@ class Layout extends React.Component  {
                 {children}
               </main>
               <div className={styles.sidemenu}>
-                <Sidemenu />
+                <Sidemenu tags={data.allTagsJson.edges} />
               </div>
             </div>
             <Footer />

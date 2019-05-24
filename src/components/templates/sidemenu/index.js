@@ -4,8 +4,9 @@ import ProfileCard from '@components/molecules/profile-card'
 import ProfileSnsCard from '@components/molecules/profile-sns-card'
 import ProfileLinksCard from '@components/molecules/profile-links-card'
 import SiteLinksCard from '@components/molecules/site-links-card'
+import TagsCard from '@components/molecules/tags-card'
 
-const Sidemenu = () => (
+const Sidemenu = ({ tags }) => (
   <div>
     <ProfileCard />
     <div className={styles.hr} />
@@ -14,6 +15,8 @@ const Sidemenu = () => (
     <ProfileLinksCard />
     <div className={styles.hr} />
     <SiteLinksCard />
+    <div className={styles.hr} />
+    <TagsCard tags={tags} />
   </div>
 )
 

@@ -21,7 +21,7 @@ const PostCard = ({ post }) => {
             <PostStatusTag status={post.frontmatter.statusObject} />
           </div>
           <p className="text-grey-darker text-sm mb-2">{post.frontmatter.description}{" "}</p>
-          <div class="my-2">
+          <div class="flex flex-wrap my-2">
             {post.frontmatter.tagObjects.map(tag => <Tag tag={tag} />)}
           </div>
           <Date date={post.frontmatter.date} />
