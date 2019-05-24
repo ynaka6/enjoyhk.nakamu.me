@@ -8,6 +8,10 @@
         "slug": "insta-spot"
     },
     {
+        "name": "子供の遊び場",
+        "slug": "children-playground"
+    },
+    {
         "name": "お粥",
         "slug": "okayu"
     },
@@ -26,5 +30,9 @@
     {
         "name": "彩虹",
         "slug": "choihung-ja"
+    },
+    {
+        "name": "荃灣",
+        "slug": "tsuen-wan-ja"
     }
 ]
