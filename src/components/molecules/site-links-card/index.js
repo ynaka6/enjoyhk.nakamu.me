@@ -24,6 +24,14 @@ const ProfileLinksCard = () => {
             </Link>
           </div>
         </li>
+        <li>
+          <div className="flex items-center my-2">
+            <CircleCheckIcon className="text-primary fill-current w-6 h-6 mr-1" />
+            <Link to='/made-with' className="text-base">
+              Made with
+            </Link>
+          </div>
+        </li>
       </ul>
     </div>
   )
