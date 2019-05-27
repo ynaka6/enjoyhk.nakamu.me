@@ -35,14 +35,14 @@ const ArticleSection = ({ location, post, previous, next}) => {
           <PostStatusTag status={post.frontmatter.statusObject} />
           <h1 className="text-2xl lg:text-3xl font-bold my-1">{post.frontmatter.title}</h1>
           <p className="text-sm text-gray-600 my-1">{post.frontmatter.description}</p>
-          <div class="my-2">
-            {post.frontmatter.tagObjects.map(tag => <Tag tag={tag} />)}
+          <div className="my-2">
+            {post.frontmatter.tagObjects.map(tag => <Tag key={tag.slug} tag={tag} />)}
           </div>
           <Date date={post.frontmatter.date} />
         </div>
         <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
         <PostContent post={post} />
-        <div class="flex justify-center lg:justify-start px-3 mb-4">
+        <div className="flex justify-center lg:justify-start px-3 mb-4">
           <FacebookShareButton url={articleUrl} className="mr-2">
             <FacebookIcon size={40} round />
           </FacebookShareButton>

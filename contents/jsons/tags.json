@@ -34,5 +34,9 @@
     {
         "name": "荃灣",
         "slug": "tsuen-wan-ja"
+    },
+    {
+        "name": "将軍澳",
+        "slug": "tseung-kwan-o-ja"
     }
 ]

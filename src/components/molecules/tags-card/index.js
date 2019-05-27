@@ -7,7 +7,7 @@ const TagsCard = ({ tags }) => {
     <div className={styles.card}>
       <h2 className={styles.title}>Tags</h2>
       <div className="flex flex-wrap">
-        {tags.map(tag => <Tag tag={tag.node} />)}
+        {tags.map(tag => <Tag key={tag.node.slug} tag={tag.node} />)}
       </div>
     </div>
   )
