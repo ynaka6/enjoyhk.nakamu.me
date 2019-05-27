@@ -16,6 +16,10 @@
         "slug": "okayu"
     },
     {
+        "name": "河粉",
+        "slug": "ho-fun"
+    },
+    {
         "name": "四川料理",
         "slug": "sichuan-food"
     },
@@ -38,5 +42,9 @@
     {
         "name": "将軍澳",
         "slug": "tseung-kwan-o-ja"
+    },
+    {
+        "name": "調景嶺",
+        "slug": "tiu-keng-leng-ja"
     }
 ]
