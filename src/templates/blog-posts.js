@@ -10,7 +10,7 @@ class BlogPostsTemplate extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="記事一覧" keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title="記事一覧" description="EnjoyHKの記事一覧を表示します" />
         <Breadcrumb breadcrumbs={[
             { to: '/', label: 'Home' },
             { to: '/posts', label: '記事一覧', active: true },

@@ -6,7 +6,7 @@ import Blog from "@components/organisms/home/blog"
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`gatsby`, `react`, `香港`, `ブログ`]} />
     <Blog
       totalCount={data.allMarkdownRemark.totalCount}
       posts={(

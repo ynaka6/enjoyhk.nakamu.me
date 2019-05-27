@@ -12,7 +12,7 @@ class CategoryPostsTemplate extends React.Component {
     const category = props.data.categoriesJson
     return (
       <Layout>
-        <SEO title={`${category.name}に関する一覧`} keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title={`${category.name}に関する一覧`} description={`EnjoyHKの「カテゴリー - ${category.name}」に関する一覧を表示します`} />
         <Breadcrumb breadcrumbs={[
             { to: '/', label: 'Home' },
             { to: '/posts', label: '記事一覧' },

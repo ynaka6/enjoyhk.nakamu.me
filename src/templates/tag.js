@@ -12,7 +12,7 @@ class TagPostsTemplate extends React.Component {
     const tag = props.data.tagsJson
     return (
       <Layout>
-        <SEO title={`${tag.name}に関する一覧`} keywords={[`gatsby`, `application`, `react`]} />
+        <SEO title={`${tag.name}に関する一覧`}  description={`EnjoyHKの「タグ - ${tag.name}」に関する一覧を表示します`} />
         <Breadcrumb breadcrumbs={[
             { to: '/', label: 'Home' },
             { to: '/posts', label: '記事一覧' },

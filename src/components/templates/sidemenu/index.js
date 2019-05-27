@@ -1,4 +1,5 @@
 import React from "react"
+import AdSense from 'react-adsense'
 import styles from "./sidemenu.module.css"
 import ProfileCard from '@components/molecules/profile-card'
 import ProfileSnsCard from '@components/molecules/profile-sns-card'
@@ -9,6 +10,11 @@ import TagsCard from '@components/molecules/tags-card'
 const Sidemenu = ({ tags }) => (
   <div>
     <ProfileCard />
+    <div className={styles.hr} />
+    {process.env.GOOGLE_ADSENSE_ID ? <AdSense.Google
+      client={process.env.GOOGLE_ADSENSE_ID}
+      slot=''
+    /> : ''}
     <div className={styles.hr} />
     <ProfileSnsCard />
     <div className={styles.hr} />

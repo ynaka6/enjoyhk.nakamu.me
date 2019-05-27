@@ -139,6 +139,7 @@ module.exports = {
         whitelist: [
           "IFRAMELY_API_KEY",
           "GOOGLE_ANALYTICS_TRACKING_ID",
+          "GOOGLE_ADSENSE_ID",
           "SITE_URL"
         ]
       },

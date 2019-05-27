@@ -6,7 +6,7 @@ import Contact from "@components/organisms/contact"
 
 const ContactPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="問い合わせ" keywords={[`問い合わせ`]} />
     <div className="bg-white container mx-auto">
       <div className="flex flex-col justify-center">
         <Breadcrumb breadcrumbs={[

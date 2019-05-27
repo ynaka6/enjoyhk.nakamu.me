@@ -35,6 +35,7 @@ class BlogPostTemplate extends React.Component {
             <Breadcrumb breadcrumbs={[
               { to: '/', label: 'Home' },
               { to: '/posts', label: '記事一覧' },
+              { to: `/category/${post.frontmatter.categoryObject.slug}/posts`, label: `${post.frontmatter.categoryObject.name}に関する一覧` },
               { to: `/post${post.fields.slug}`, label: post.frontmatter.title, active: true },
             ]}
             />

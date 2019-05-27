@@ -6,7 +6,7 @@ import PrivacyPolicy from "@components/organisms/privacy-policy"
 
 const PrivacyPolicyPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="プライバシーポリシー" keywords={[`プライバシーポリシー`]} />
     <div className="bg-white container mx-auto">
       <div className="flex flex-col justify-center">
         <Breadcrumb breadcrumbs={[
