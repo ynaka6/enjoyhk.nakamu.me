@@ -72,6 +72,7 @@ module.exports = {
         pedantic: true,
         gfm: true,
         plugins: [
+          `gatsby-remark-embed-video`,
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -117,7 +118,7 @@ module.exports = {
             },
           },
           `gatsby-remark-component`,
-          `gatsby-remark-responsive-iframe`
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },
