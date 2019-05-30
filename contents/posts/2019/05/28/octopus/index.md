@@ -13,8 +13,10 @@ status: published
 香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
 
 先日紹介した「**オクトパスカード**」ですが、公共交通機関の利用料金が還付されます。  
-益々**オクトパスカード**は便利になりますね。
+益々**オクトパスカード**は便利になりますね。  
+**オクトパスカード**の説明については、以下の投稿をご確認ください。
 
+<embed-post-card href="/2019/05/27/octopus/"></embed-post-card>
 
 ## どのくらい還付されるの？
 
@@ -31,10 +33,13 @@ status: published
 ![オクトパス - 写真](../../../../../images/uploads/2019/05/28/octopus/picture-1.png)
 
 
-
 ## 参考情報
 - [香港の公共交通機関で割引制度開始　最大で300香港ドル還付](https://hongkong.keizai.biz/headline/1056/)  
 
 
 ## 最後に
 皆さんも還付の有無に関わらずタッチする癖をつけましょう。
+
+
+## 関連投稿
+<embed-post-card href="/2019/05/27/octopus/"></embed-post-card>

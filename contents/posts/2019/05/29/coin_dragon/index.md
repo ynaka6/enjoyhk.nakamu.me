@@ -61,3 +61,8 @@ status: published
 
 ## 最後に
 皆さんも硬貨をチャージしてみてください！
+
+
+## 関連投稿
+<embed-post-card href="/2019/05/27/octopus/"></embed-post-card>
+<embed-post-card href="/2019/05/28/octopus/"></embed-post-card>

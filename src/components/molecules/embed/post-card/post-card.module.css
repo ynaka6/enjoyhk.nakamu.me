@@ -1,0 +1,48 @@
+.card {
+    @apply flex items-center border leading-normal mb-4;
+}
+.card:hover {
+    transform: translateY(-.25rem);
+    @apply bg-gray-100;
+}
+
+.card-image {
+    @apply h-full w-1/4;
+}
+
+.card-content {
+    @apply w-3/4 p-1;
+}
+.card-content-title {
+    @apply mb-2 text-base font-semibold text-gray-900 whitespace-no-wrap overflow-x-hidden;
+    text-overflow: ellipsis;
+}
+.card-content-description {
+    @apply h-10 text-xs text-gray-600 overflow-y-hidden;
+}
+.card-content-other {
+    @apply hidden items-center my-2;
+}
+@screen sm {
+}
+@screen md {
+}
+@screen lg {
+    .card-content {
+        @apply p-2;
+    }
+    .card-content-title {
+        @apply text-xl;
+    }
+    .card-content-description {
+        @apply h-12 text-base;
+    }
+    .card-content-other {
+        @apply flex;
+    }
+    @s
+}
+@screen xl {
+}
+
+
