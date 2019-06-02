@@ -25,7 +25,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO title={post.frontmatter.title} description={post.description} />
         <Helmet>
           <script type="text/javascript" src="//cdn.iframe.ly/embed.js" charset="utf-8"/>
         </Helmet>
