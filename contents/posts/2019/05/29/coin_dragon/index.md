@@ -3,7 +3,8 @@ title: "硬貨を「オクトパスカード」にチャージできる「COIN D
 description: "小銭が溜まって困ることがありますよね？そんな時は「COIN DRAGON」を利用して硬貨をオクトパスカードにチャージしましょう"
 category: "香港生活"
 tags: ['香港', 'オクトパスカード', 'COIN DRAGON']
-date: "2019-05-29"
+created_at: "2019-05-29 00:00"
+updated_at: "2019-05-29 00:00"
 hero: ../../../../../images/20190529-coin-dragon-hero-image.png
 status: published
 ---

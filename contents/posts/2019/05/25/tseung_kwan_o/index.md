@@ -3,7 +3,8 @@ title: "「将軍澳運動場」まで家族で散歩しに行きました"
 description: "香港の都心部は人も多く、スピード感があり、慌ただしい感じがあります。休みの日はのんびり公園に出かけるのもいいですね"
 category: "香港生活"
 tags: ['香港', '将軍澳', '子供の遊び場']
-date: "2019-05-25"
+created_at: "2019-05-25 00:00"
+updated_at: "2019-05-25 00:00"
 hero: ../../../../../images/20190525-tseung-kwan-o-hero-image.png
 status: published
 ---

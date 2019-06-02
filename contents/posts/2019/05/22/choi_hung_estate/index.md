@@ -3,7 +3,8 @@ title: "インスタ映えスポットの「彩虹邨」"
 description: "インスタ映えスポットとして有名な「彩虹邨」のご紹介"
 category: "観光"
 tags: ['香港', '彩虹', 'インスタスポット']
-date: "2019-05-22"
+created_at: "2019-05-22 00:00"
+updated_at: "2019-05-22 00:00"
 hero: ../../../../../images/20190522-choi-hung-estate-hero-image.png
 status: writting
 ---

@@ -3,7 +3,8 @@ title: "子供の遊び場「D・PARK」で土日は子供と遊ぼう"
 description: "うちの娘の大好きな場所「D・PARK」。是非土日に遊びに行ってみてください"
 category: "香港生活"
 tags: ['香港', '荃灣', '子供の遊び場']
-date: "2019-05-24"
+created_at: "2019-05-24 00:00"
+updated_at: "2019-05-24 00:00"
 hero: ../../../../../images/20190524-dpark-hero-image.png
 status: writting
 ---

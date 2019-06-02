@@ -75,7 +75,7 @@ export const pageQuery = graphql`
         category
         tags
         status
-        date(formatString: "YYYY.MM.DD")
+        created_at(formatString: "YYYY.MM.DD")
         hero {
           publicURL
           childImageSharp {

@@ -3,7 +3,8 @@ title: "香港生活を綴ったブログを始めます"
 description: "香港生活を綴ったブログを始めるに当たって、どのような読者をターゲットにしているか、今後どのようなことを記事にしていくかを記載します"
 category: "その他"
 tags: ['香港']
-date: "2019-05-21"
+created_at: "2019-05-20 12:00"
+updated_at: "2019-05-20 12:00"
 hero: ../../../../../images/blog-introduction-hero-image.png
 status: published
 ---

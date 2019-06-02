@@ -3,7 +3,8 @@ title: "香港生活に欠かせない「オクトパスカード」を利用し
 description: "香港で生活する人の必需品。みんな利用している「オクトパスカード」のご紹介。"
 category: "香港生活"
 tags: ['香港', 'オクトパスカード']
-date: "2019-05-27"
+created_at: "2019-05-27 00:00"
+updated_at: "2019-05-27 00:00"
 hero: ../../../../../images/20190527-octopus-hero-image.png
 status: published
 ---

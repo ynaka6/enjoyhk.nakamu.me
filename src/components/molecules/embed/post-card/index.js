@@ -19,7 +19,7 @@ class EmbedPostCard extends React.Component  {
       query={graphql`
         query  {
           allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date]},
+            sort: { order: DESC, fields: [frontmatter___created_at]},
             limit: 1000
           ) {
             totalCount
@@ -35,7 +35,7 @@ class EmbedPostCard extends React.Component  {
                   category
                   tags
                   status
-                  date(formatString: "YYYY.MM.DD"),
+                  created_at(formatString: "YYYY.MM.DD"),
                   hero {
                     publicURL
                     childImageSharp {
@@ -105,7 +105,7 @@ class EmbedPostCard extends React.Component  {
                 </div>
                 <span className="text-sm text-gray-600">{href}</span>
                 <span className="mx-2 text-gray-400">|</span>
-                <Date date={post.frontmatter.date} />
+                <Date date={post.frontmatter.created_at} />
               </div>
             </div>
           </Link>

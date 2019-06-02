@@ -46,7 +46,7 @@ export const categoryBlogListQuery = graphql`
   query categoryBlogListQuery($category: String, $skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       filter: { frontmatter: { category: { eq: $category } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___created_at], order: DESC }
       limit: $limit
       skip: $skip
     ) {
@@ -61,7 +61,7 @@ export const categoryBlogListQuery = graphql`
             category
             tags
             status
-            date(formatString: "YYYY.MM.DD")
+            created_at(formatString: "YYYY.MM.DD")
             hero {
               publicURL
               childImageSharp {

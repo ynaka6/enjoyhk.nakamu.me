@@ -3,7 +3,8 @@ title: "自己紹介＆プロフィール紹介"
 description: "はじめまして、なかむと申します。今回は香港に来た理由も含め私の自己紹介したいと思います"
 category: "その他"
 tags: ['自己紹介']
-date: "2019-05-20"
+created_at: "2019-05-20 00:00"
+updated_at: "2019-05-20 00:00"
 hero: ../../../../../images/profile-introduction-hero-image.png
 status: published
 ---

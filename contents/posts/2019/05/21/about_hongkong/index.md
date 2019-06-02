@@ -3,7 +3,8 @@ title: "香港ってどんなとこ？"
 description: "今回は私が生活している香港という都市を紹介したいと思います。旅行が好きな方にも楽しんでもらい香港にもっと多くの方が来ていただけると私も嬉しいです！"
 category: "香港生活"
 tags: ['香港']
-date: "2019-05-21"
+created_at: "2019-05-21 00:00"
+updated_at: "2019-05-21 00:00"
 hero: ../../../../../images/20190521-about-hongkong-hero-image.png
 status: published
 ---

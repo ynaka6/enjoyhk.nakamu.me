@@ -3,7 +3,8 @@ title: "彩明街市で「河粉」を食べました"
 description: "彩明商場内にある彩明街市で「河粉」を食べてきました。"
 category: "グルメ"
 tags: ['香港', '調景嶺', '河粉']
-date: "2019-05-25"
+created_at: "2019-05-25 00:00"
+updated_at: "2019-05-25 00:00"
 hero: ../../../../../images/20190525-ho-fun-hero-image.png
 status: published
 ---

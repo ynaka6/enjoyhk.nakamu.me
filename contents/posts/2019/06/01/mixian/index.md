@@ -3,7 +3,8 @@ title: "譚仔雲南米線で「米線」を食べる"
 description: "娘が好きなようで2日連続でお昼に米線を食べてきました。"
 category: "グルメ"
 tags: ['香港', '調景嶺', '米線']
-date: "2019-06-01"
+created_at: "2019-06-01 00:00"
+updated_at: "2019-06-01 00:00"
 hero: ../../../../../images/20190601-mixian-hero-image.png
 status: published
 ---

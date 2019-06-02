@@ -3,7 +3,8 @@ title: "香港の洗濯屋さん「洗衣店」"
 description: "香港にはクリーニングとは異なる洗濯専門のお店があります。駐在で来ている方など一人暮らしの方にはとても便利です。"
 category: "香港生活"
 tags: ['香港', '洗衣店']
-date: "2019-06-01"
+created_at: "2019-06-01 00:00"
+updated_at: "2019-06-01 00:00"
 hero: ../../../../../images/20190601-cleaning-hero-image.png
 status: published
 ---

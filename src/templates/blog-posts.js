@@ -42,7 +42,7 @@ export default BlogPostsTemplate
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___created_at], order: DESC }
       limit: $limit
       skip: $skip
     ) {
@@ -57,7 +57,7 @@ export const blogListQuery = graphql`
             category
             tags
             status
-            date(formatString: "YYYY.MM.DD")
+            created_at(formatString: "YYYY.MM.DD")
             hero {
               publicURL
               childImageSharp {

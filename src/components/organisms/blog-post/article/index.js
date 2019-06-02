@@ -38,7 +38,7 @@ const ArticleSection = ({ location, post, previous, next}) => {
           <div className="my-2">
             {post.frontmatter.tagObjects.map(tag => <Tag key={tag.slug} tag={tag} />)}
           </div>
-          <Date date={post.frontmatter.date} />
+          <Date date={post.frontmatter.created_at} />
         </div>
         <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
         <PostContent post={post} />

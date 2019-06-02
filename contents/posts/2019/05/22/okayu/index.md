@@ -3,7 +3,8 @@ title: "「洪利粥店茶餐廳」でお粥を食べて来ました"
 description: "香港に来たら是非食べて欲しいもお粥。その中でもオススメなお店の１つである「洪利粥店茶餐廳」を紹介します"
 category: "グルメ"
 tags: ['香港', '尖沙咀', 'お粥']
-date: "2019-05-22"
+created_at: "2019-05-22 00:00"
+updated_at: "2019-05-22 00:00"
 hero: ../../../../../images/20190522-okayu-hero-image.png
 status: published
 ---

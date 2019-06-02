@@ -3,7 +3,8 @@ title: "ドリアンの季節になりました"
 description: "スーパーにたくさんのドリアンが並ぶ季節になりました。今年も１度はドリアンを食したいと思います。"
 category: "グルメ"
 tags: ['香港', 'ドリアン']
-date: "2019-05-30"
+created_at: "2019-05-30 00:00"
+updated_at: "2019-05-30 00:00"
 hero: ../../../../../images/20190530-dorian-hero-image.png
 status: published
 ---

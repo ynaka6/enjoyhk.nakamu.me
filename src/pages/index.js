@@ -30,7 +30,7 @@ export default IndexPage
 export const query = graphql`
   query {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date]},
+      sort: { order: DESC, fields: [frontmatter___created_at]},
       limit: 20
     ) {
       totalCount
@@ -46,7 +46,7 @@ export const query = graphql`
             category
             tags
             status
-            date(formatString: "YYYY.MM.DD"),
+            created_at(formatString: "YYYY.MM.DD"),
             hero {
               publicURL
               childImageSharp {

@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
           <div className="flex flex-wrap my-2">
             {post.frontmatter.tagObjects.map(tag => <Tag key={tag.slug} tag={tag} />)}
           </div>
-          <Date date={post.frontmatter.date} />
+          <Date date={post.frontmatter.created_at} />
         </div>
         <div className={styles.contentImage}>
           <Link to={`/post/${post.fields.slug}`}>

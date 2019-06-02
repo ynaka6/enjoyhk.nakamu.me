@@ -3,7 +3,8 @@ title: "「オクトパスカード」を利用した交通費が還付されま
 description: "香港で生活する人の必需品。みんな利用している「オクトパスカード」のご紹介。"
 category: "香港生活"
 tags: ['香港', 'オクトパスカード']
-date: "2019-05-28"
+created_at: "2019-05-28 00:00"
+updated_at: "2019-05-28 00:00"
 hero: ../../../../../images/20190528-octopus-hero-image.png
 status: published
 ---
