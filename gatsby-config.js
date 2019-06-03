@@ -62,7 +62,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
-                  date: edge.node.frontmatter.created_at,
+                  created_at: edge.node.frontmatter.created_at,
                   url: site.siteMetadata.siteUrl + '/post' + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + '/post' + edge.node.fields.slug,
                   custom_elements: [{ "content:encoded": edge.node.html }],
