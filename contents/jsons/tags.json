@@ -32,6 +32,10 @@
         "slug": "ho-fun"
     },
     {
+        "name": "天気",
+        "slug": "whether"
+    },
+    {
         "name": "米線",
         "slug": "mixian"
     },
