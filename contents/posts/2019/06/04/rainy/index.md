@@ -3,8 +3,8 @@ title: "香港は最近雨ばかり・・・"
 description: "香港は雨が多い地域です。一日中雨ということはないですが、最近は特に晴れ間が少ないです。"
 category: "香港生活"
 tags: ['香港', '天気']
-created_at: "2019-06-03 09:00"
-updated_at: "2019-06-03 09:00"
+created_at: "2019-06-04 09:00"
+updated_at: "2019-06-04 09:00"
 hero: ../../../../../images/20190604-rainy-hero-image.png
 status: published
 ---
