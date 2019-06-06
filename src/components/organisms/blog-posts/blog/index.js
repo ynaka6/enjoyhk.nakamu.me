@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React from "react"
-import InViewMonitor from 'react-inview-monitor';
 import PostCard from '@components/molecules/post-card';
 
 const Blog = ({ posts, pageContext }) => {
@@ -26,30 +25,25 @@ const Blog = ({ posts, pageContext }) => {
 
   return (
     <div className="w-full">
-      <InViewMonitor
-        classNameNotInView='inview-section-hidden'
-        classNameInView='inview-section-active'
-      >
-        <div className="container mx-auto">
-          <div className="w-full mt-6 mb-10">
+      <div className="container mx-auto">
+        <div className="w-full mt-6 mb-10">
 
-            {posts.map(({ node }) => (
-              <div key={node.fields.slug} className="mx-2">
-                <PostCard post={node} />
-              </div>
-            ))}
+          {posts.map(({ node }) => (
+            <div key={node.fields.slug} className="mx-2">
+              <PostCard post={node} />
+            </div>
+          ))}
 
+        </div>
+        <div className="flex justify-between mb-10">
+          <div>
+            {prevPage}
           </div>
-          <div className="flex justify-between mb-10">
-            <div>
-              {prevPage}
-            </div>
-            <div>
-              {nextPage}
-            </div>
+          <div>
+            {nextPage}
           </div>
         </div>
-      </InViewMonitor>
+      </div>
     </div>
   )
 }

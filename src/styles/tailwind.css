@@ -45,14 +45,6 @@ svg {
     top: -1em;
     @apply text-gray-700 text-xs;
 }
-  
-.inview-section-hidden {
-    @apply mt-10 opacity-0;
-}  
-.inview-section-active {
-    transition: all 1000ms ease;
-    @apply mt-0 opacity-100;
-}
 
 .gatsby-resp-image-link {
     @apply my-4;
