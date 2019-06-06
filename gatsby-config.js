@@ -193,7 +193,8 @@ module.exports = {
           "IFRAMELY_API_KEY",
           "GOOGLE_ANALYTICS_TRACKING_ID",
           "GOOGLE_ADSENSE_ID",
-          "SITE_URL"
+          "SITE_URL",
+          "DISQUS_SHORTNAME"
         ]
       },
     },
@@ -201,6 +202,12 @@ module.exports = {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID
+      }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_SHORTNAME
       }
     },
   ],

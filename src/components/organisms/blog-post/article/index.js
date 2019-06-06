@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import InViewMonitor from 'react-inview-monitor';
+import Disqus from 'gatsby-plugin-disqus'
 import Category from '@components/atoms/category'
 import Tag from '@components/atoms/tag'
 import PostStatusTag from '@components/atoms/post-status-tag'
@@ -75,6 +76,15 @@ const ArticleSection = ({ location, post, previous, next}) => {
             )}
           </li>
         </ul>
+        {process.env.DISQUS_SHORTNAME && (
+          <div className="my-5">
+            <Disqus 
+              identifier={post.id}
+              title={post.frontmatter.title}
+              url={articleUrl}
+            />
+          </div>
+        )}
       </div>
     </InViewMonitor>
   )
