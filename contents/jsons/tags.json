@@ -32,6 +32,10 @@
         "slug": "children-playground"
     },
     {
+        "name": "辛いもの好き",
+        "slug": "like-spicy"
+    },
+    {
         "name": "お粥",
         "slug": "okayu"
     },
@@ -81,6 +85,14 @@
     },
     {
         "name": "調景嶺",
+        "slug": "tiu-keng-leng-ja"
+    },
+    {
+        "name": "羅湖",
+        "slug": "lo-wu"
+    },
+    {
+        "name": "深圳",
         "slug": "tiu-keng-leng-ja"
     }
 ]
