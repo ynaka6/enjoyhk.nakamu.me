@@ -5,5 +5,17 @@
     @apply fill-current w-8 h-8 text-red-600 mr-4;
 }
 .message {
-    @apply font-bold text-sm text-red-700;
+    @apply font-bold text-xs text-red-700;
+}
+
+@screen sm {
+}
+@screen md {
+}
+@screen lg {
+    .message {
+        @apply text-sm;
+    }
+}
+@screen xl {
 }

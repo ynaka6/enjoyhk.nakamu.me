@@ -2,11 +2,15 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "@components/templates/layout"
 import SEO from "@components/seo"
+import Information from "@components/atoms/information"
 import Blog from "@components/organisms/home/blog"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="EnjoyHK" keywords={[`gatsby`, `react`, `香港`, `ブログ`]} />
+    <div className="w-full mb-2">
+      <Information message="日々の生活や旅行など日本とは異なることや日本人には疑問に思うこと記録するブログです。" />
+    </div>
     <Blog
       totalCount={data.allMarkdownRemark.totalCount}
       posts={(
