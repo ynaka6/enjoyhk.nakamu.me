@@ -51,3 +51,7 @@
 .content table > tbody > tr > td {
   @apply border p-2;
 }
+
+.content .gatsby-resp-iframe-wrapper {
+    @apply mb-6;
+}
