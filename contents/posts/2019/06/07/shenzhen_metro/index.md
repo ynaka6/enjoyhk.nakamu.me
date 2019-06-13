@@ -44,6 +44,13 @@ status: published
 
 混んでる駅だと行列ができて大変です・・・
 
+## 改札
+WeChatのQRコードで入場することができますので、QRコードのスキャナーが改札に付いています。  
+乗車券のコインの場合は、入場時はタッチ。退場時は、コインを入れる形になります。  
+
+![深圳 - 改札](../../../../../images/uploads/2019/06/07/shenzhen_metro/picture-3.png)
+
+
 ## 地下鉄MAP
 ![MTR Map](../../../../../images/uploads/2019/06/07/shenzhen_metro/shenzhen-metro-map.png)
 
