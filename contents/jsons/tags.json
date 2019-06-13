@@ -12,8 +12,16 @@
         "slug": "coin-dragon"
     },
     {
+        "name": "地下鉄",
+        "slug": "metro"
+    },
+    {
         "name": "ケバブ",
         "slug": "kebab"
+    },
+    {
+        "name": "つぶやき",
+        "slug": "tweet"
     },
     {
         "name": "ドリアン",
