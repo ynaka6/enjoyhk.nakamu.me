@@ -36,7 +36,7 @@ const ArticleSection = ({ location, post, previous, next}) => {
         </div>
         <Date date={post.frontmatter.created_at} />
       </div>
-      <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
+      {post.frontmatter.hero && (<HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />)}
       <PostContent post={post} />
       <div className="flex justify-center lg:justify-start px-3 mb-4">
         <FacebookShareButton url={articleUrl} className="mr-2">

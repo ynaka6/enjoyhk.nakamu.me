@@ -31,7 +31,7 @@
         @apply flex-row;
     }
     .content-title {
-        @apply w-2/3  pr-2;
+        @apply w-2/3 pr-2;
     }
     .content-image {
         @apply w-1/3;

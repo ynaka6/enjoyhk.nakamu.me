@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import HeroImage from '@components/atoms/hero-image'
+import Image from "@components/atoms/image";
 import Category from '@components/atoms/category'
 import Tag from '@components/atoms/tag'
 import PostStatusTag from '@components/atoms/post-status-tag'
@@ -26,11 +27,19 @@ const PostCard = ({ post }) => {
           </div>
           <Date date={post.frontmatter.created_at} />
         </div>
-        <div className={styles.contentImage}>
-          <Link to={`/post/${post.fields.slug}`}>
-            <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
-          </Link>
-        </div>
+        {post.frontmatter.hero ? (
+          <div className={styles.contentImage}>
+            <Link to={`/post/${post.fields.slug}`}>
+              <HeroImage node={post.frontmatter.hero} props={{ alt: post.frontmatter.title }} />
+            </Link>
+          </div>  
+        ) : (
+          <div className={styles.contentImage}>
+            <Link to={`/post/${post.fields.slug}`}>
+              <Image filename="tweet-hero-image.png" alt="つぶやき"　/>
+            </Link>
+          </div>  
+        )}
       </div>
     </div>
   )
