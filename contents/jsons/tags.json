@@ -48,6 +48,14 @@
         "slug": "like-spicy"
     },
     {
+        "name": "豆腐花",
+        "slug": "tofuhua"
+    },
+    {
+        "name": "デザート",
+        "slug": "dessert"
+    },
+    {
         "name": "お粥",
         "slug": "okayu"
     },
@@ -77,11 +85,15 @@
     },
     {
         "name": "香港",
-        "slug": "hongkong-ja"
+        "slug": "hongkong"
     },
     {
         "name": "尖沙咀",
-        "slug": "tsim-sha-tsui-ja"
+        "slug": "tsim-sha-tsui"
+    },
+    {
+        "name": "佐敦",
+        "slug": "jordan"
     },
     {
         "name": "中環",
@@ -89,23 +101,23 @@
     },
     {
         "name": "尖東",
-        "slug": "tsim-sha-tsui-east-ja"
+        "slug": "tsim-sha-tsui-east"
     },
     {
         "name": "彩虹",
-        "slug": "choihung-ja"
+        "slug": "choihung"
     },
     {
         "name": "荃灣",
-        "slug": "tsuen-wan-ja"
+        "slug": "tsuen-wan"
     },
     {
         "name": "将軍澳",
-        "slug": "tseung-kwan-o-ja"
+        "slug": "tseung-kwan-o"
     },
     {
         "name": "調景嶺",
-        "slug": "tiu-keng-leng-ja"
+        "slug": "tiu-keng-leng"
     },
     {
         "name": "羅湖",
@@ -113,6 +125,6 @@
     },
     {
         "name": "深圳",
-        "slug": "shenzhen-ja"
+        "slug": "shenzhen"
     }
 ]
