@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import AdSense from 'react-adsense'
 
 import Header from "../header"
 import Footer from "../footer"
@@ -63,6 +64,12 @@ class Layout extends React.Component  {
               scrollY={this.state.y}
             />
             <div className={styles.container}>
+              <div className="w-full flex flex-wrap justify-center mb-2">
+                {process.env.GOOGLE_ADSENSE_ID ? <AdSense.Google
+                  client={process.env.GOOGLE_ADSENSE_ID}
+                  slot=''
+                /> : ''}
+              </div>
               <div className="w-full flex flex-wrap justify-center mb-2">
                 {data.allCategoriesJson.edges.map(({ node }) => <CategoryCard key={node.slug} category={node} />)}
               </div>
