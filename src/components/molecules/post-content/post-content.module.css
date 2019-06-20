@@ -51,6 +51,9 @@
 .content table > tbody > tr > td {
   @apply border p-2;
 }
+.content table > tbody > tr > td:first-child {
+  @apply whitespace-no-wrap;
+}
 
 .content .gatsby-resp-iframe-wrapper {
     @apply mb-6;

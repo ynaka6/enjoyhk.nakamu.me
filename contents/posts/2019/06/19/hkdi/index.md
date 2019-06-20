@@ -38,12 +38,12 @@ http://www.hkdi.edu.hk/tc/edt/edt.php を引用させてもらいました
 
 ## 写真
 
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-3.png)
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-4.png)
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-5.png)
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-6.png)
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-7.png)
-![香港知專設計學院 (HKDI)](../../../../../images/uploads/2019/06/19/hkdi/picture-8.png)
+![香港知專設計學院 (HKDI) - 1](../../../../../images/uploads/2019/06/19/hkdi/picture-3.png)
+![香港知專設計學院 (HKDI) - 2](../../../../../images/uploads/2019/06/19/hkdi/picture-4.png)
+![香港知專設計學院 (HKDI) - 3](../../../../../images/uploads/2019/06/19/hkdi/picture-5.png)
+![香港知專設計學院 (HKDI) - 4](../../../../../images/uploads/2019/06/19/hkdi/picture-6.png)
+![香港知專設計學院 (HKDI) - 5](../../../../../images/uploads/2019/06/19/hkdi/picture-7.png)
+![香港知專設計學院 (HKDI) - 6](../../../../../images/uploads/2019/06/19/hkdi/picture-8.png)
 
 
 ## 基本情報
