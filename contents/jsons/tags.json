@@ -126,5 +126,9 @@
     {
         "name": "深圳",
         "slug": "shenzhen"
+    },
+    {
+        "name": "老街",
+        "slug": "lao-jie"
     }
 ]
