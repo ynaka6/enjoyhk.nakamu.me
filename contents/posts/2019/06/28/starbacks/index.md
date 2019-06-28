@@ -21,7 +21,7 @@ status: published
 
 Wifiを利用する方法は、
 
-**1. コーヒーなど何か書いましょう**
+**1. コーヒーなど何か買いましょう**
 
 ![スターバックス - 写真](../../../../../images/uploads/2019/06/28/starbacks/picture-1.jpg)
 
