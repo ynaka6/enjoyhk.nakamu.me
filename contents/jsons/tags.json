@@ -1,5 +1,9 @@
 [
     {
+        "name": "IT",
+        "slug": "it"
+    },
+    {
         "name": "自己紹介",
         "slug": "introduction"
     },
