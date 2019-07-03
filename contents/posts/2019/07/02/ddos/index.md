@@ -2,7 +2,7 @@
 title: "香港のサイトに向けてネット攻撃（DDos攻撃）が進行中？"
 description: "皆さんが見たいサイトは見れていますか？現在香港に向けてネット攻撃（DDos攻撃）が進行中です。"
 category: "その他"
-tags: ['香港', 'IT']
+tags: ['香港', 'IT', 'つぶやき']
 created_at: "2019-07-02 12:00"
 updated_at: "2019-07-02 12:00"
 status: published
