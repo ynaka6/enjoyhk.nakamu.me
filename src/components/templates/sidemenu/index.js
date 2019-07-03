@@ -42,6 +42,16 @@ const Sidemenu = ({ tags }) => (
         <img src="https://b.blogmura.com/overseas/hongkong/88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 海外生活ブログ 香港情報へ" />
       </a>
     </div>
+    <div className="mt-5">
+      <a
+        href="https://blogmura.com/profiles/10999375?p_cid=10999375"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+        className="none-external-link"
+      >
+        <img src="https://blogparts.blogmura.com/parts_image/user/pv10999375.gif" alt="PVアクセスランキング にほんブログ村" />
+      </a>
+    </div>
   </div>
 )
 
