@@ -1,7 +1,7 @@
 ---
 title: "MTR Free Wifiを利用して香港エアポートエクスプレスの移動をより快適に！"
 description: "本日は九龍駅から香港エアポートエクスプレスに乗車しました。MRTのFree Wifiがあったので利用してみました"
-category: "香港生活"
+category: "観光"
 tags: ['香港', '香港国際空港', 'つぶやき']
 created_at: "2019-07-12 12:00"
 updated_at: "2019-07-12 12:00"
