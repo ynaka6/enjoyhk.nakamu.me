@@ -8,24 +8,26 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 
   <h1 class="page-title">お問い合わせ</h1>
 
-  <form name="contact" method="POST" data-netlify="true" class="max-w-2xl mx-auto">
-    <input type="hidden" name="form-name" value="contact" />
-    <div class="mb-6">
-      <label for="name" class="form-label">お名前</label>
-      <input type="text" id="name" name="name" required class="form-input" />
-    </div>
-    <div class="mb-6">
-      <label for="email" class="form-label">メールアドレス</label>
-      <input type="email" id="email" name="email" required class="form-input" />
-    </div>
-    <div class="mb-6">
-      <label for="content" class="form-label">お問い合わせ内容</label>
-      <textarea id="content" name="content" rows="8" required class="form-input"></textarea>
-    </div>
-    <div class="text-center">
-      <button type="submit" class="submit-btn">送信する</button>
-    </div>
-  </form>
+  <div class="form-card">
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="mb-6">
+        <label for="name" class="form-label">お名前</label>
+        <input type="text" id="name" name="name" required class="form-input" />
+      </div>
+      <div class="mb-6">
+        <label for="email" class="form-label">メールアドレス</label>
+        <input type="email" id="email" name="email" required class="form-input" />
+      </div>
+      <div class="mb-6">
+        <label for="content" class="form-label">お問い合わせ内容</label>
+        <textarea id="content" name="content" rows="8" required class="form-input"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="submit-btn">送信する</button>
+      </div>
+    </form>
+  </div>
 </BaseLayout>
 
 <style>
@@ -34,6 +36,11 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     @apply text-center w-full font-bold mb-10 text-3xl;
     color: var(--theme-text-heading);
   }
+  .form-card {
+    @apply max-w-2xl mx-auto rounded-xl p-6;
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border);
+  }
   .form-label {
     @apply block text-sm font-bold mb-2;
     color: var(--theme-text-muted);
@@ -41,7 +48,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
   .form-input {
     @apply w-full px-4 py-3 rounded-lg;
     color: var(--theme-text);
-    background: var(--theme-card);
+    background: var(--theme-surface);
     border: 1px solid var(--theme-border-strong);
     transition: border-color 0.3s, box-shadow 0.3s;
   }
