@@ -38,55 +38,126 @@ const categorySlug = getCategorySlug(post.data.category);
     { label: post.data.title },
   ]} />
 
-  <article class="bg-white mt-4">
+  <article class="article">
     {heroSrc && (
-      <img src={heroSrc} alt={post.data.title} class="w-full h-auto" loading="lazy" />
+      <div class="article-hero">
+        <img src={heroSrc} alt={post.data.title} loading="lazy" />
+      </div>
     )}
 
-    <div class="p-4 pt-6">
-      <div class="flex justify-center mb-4">
-        <a href={`/category/${categorySlug}/posts`} class="font-bold text-gray-600 border rounded-full px-4 py-1 text-sm no-underline hover:bg-gray-100">
-          {post.data.category}
-        </a>
-      </div>
+    <div class="article-header">
+      <a href={`/category/${categorySlug}/posts`} class="article-category">
+        {post.data.category}
+      </a>
 
-      <h1 class="text-2xl font-bold text-center text-gray-900 mb-4">{post.data.title}</h1>
+      <h1 class="article-title">{post.data.title}</h1>
 
-      <div class="flex justify-center flex-wrap mb-4">
+      <div class="article-tags">
         {post.data.tags.map((tag) => (
-          <a
-            href={`/tag/${getTagSlug(tag)}/posts`}
-            class="bg-red-100 px-4 py-1 mb-1 mr-1 border border-red-400 rounded-full font-bold text-red-700 text-xs whitespace-nowrap no-underline hover:opacity-75"
-          >
+          <a href={`/tag/${getTagSlug(tag)}/posts`} class="article-tag">
             {tag}
           </a>
         ))}
       </div>
 
-      <div class="flex justify-center items-center gap-4 text-sm text-gray-600 mb-6">
+      <div class="article-dates">
         <span>公開: {formatDate(post.data.created_at)}</span>
         <span>更新: {formatDate(post.data.updated_at)}</span>
       </div>
     </div>
 
-    <div class="post-content p-4 pt-10 leading-loose">
+    <div class="post-content">
       <Content />
     </div>
   </article>
 
   <!-- Previous / Next navigation -->
-  <nav class="flex justify-between mt-8 gap-4">
+  <nav class="post-nav">
     {prev ? (
-      <a href={`/post/${getPostSlug(prev.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 bg-white hover:bg-gray-100">
-        <span class="text-xs text-gray-500">&laquo; 前の記事</span>
-        <p class="text-sm font-bold mt-1">{prev.data.title}</p>
+      <a href={`/post/${getPostSlug(prev.id)}/`} class="nav-card">
+        <span class="nav-label">&laquo; 前の記事</span>
+        <p class="nav-title">{prev.data.title}</p>
       </a>
     ) : <div class="flex-1"></div>}
     {next ? (
-      <a href={`/post/${getPostSlug(next.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 bg-white hover:bg-gray-100 text-right">
-        <span class="text-xs text-gray-500">次の記事 &raquo;</span>
-        <p class="text-sm font-bold mt-1">{next.data.title}</p>
+      <a href={`/post/${getPostSlug(next.id)}/`} class="nav-card nav-card-right">
+        <span class="nav-label">次の記事 &raquo;</span>
+        <p class="nav-title">{next.data.title}</p>
       </a>
     ) : <div class="flex-1"></div>}
   </nav>
 </BaseLayout>
+
+<style>
+  @reference "../../styles/global.css";
+  .article {
+    @apply bg-dark-card rounded-xl overflow-hidden mt-4;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .article-hero img {
+    @apply w-full h-auto;
+  }
+  .article-header {
+    @apply p-6 text-center;
+  }
+  .article-category {
+    @apply inline-block px-4 py-1 text-sm font-bold text-white rounded-full no-underline mb-4;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px rgba(255, 70, 70, 0.3);
+  }
+  .article-category:hover {
+    box-shadow: 0 0 20px rgba(255, 70, 70, 0.6);
+  }
+  .article-title {
+    @apply text-2xl font-bold text-white mb-4 leading-tight;
+  }
+  .article-tags {
+    @apply flex justify-center flex-wrap mb-4 gap-1;
+  }
+  .article-tag {
+    @apply px-3 py-1 rounded-full font-bold text-xs no-underline transition-all;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--color-neon-cyan);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+  }
+  .article-tag:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  }
+  .article-dates {
+    @apply flex justify-center items-center gap-4 text-sm text-gray-500;
+  }
+  .post-content {
+    @apply p-6 pt-10 leading-loose;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Nav */
+  .post-nav {
+    @apply flex justify-between mt-8 gap-4;
+  }
+  .nav-card {
+    @apply flex-1 p-4 rounded-lg no-underline transition-all duration-300;
+    background: var(--color-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .nav-card:hover {
+    border-color: rgba(255, 70, 70, 0.4);
+    box-shadow: 0 0 15px rgba(255, 70, 70, 0.15);
+  }
+  .nav-card-right {
+    @apply text-right;
+  }
+  .nav-label {
+    @apply text-xs text-gray-500;
+  }
+  .nav-title {
+    @apply text-sm font-bold mt-1 text-gray-300;
+  }
+
+  @media (min-width: 768px) {
+    .article-title {
+      @apply text-3xl;
+    }
+  }
+</style>

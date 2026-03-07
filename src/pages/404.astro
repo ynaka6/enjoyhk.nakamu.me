@@ -4,16 +4,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="ページが見つかりません">
   <div class="text-center py-20">
-    <svg class="w-20 h-20 mx-auto text-gray-400 fill-current mb-6" version="1.1" viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18,2A16,16,0,1,0,34,18,16,16,0,0,0,18,2Zm0,30A14,14,0,1,1,32,18,14,14,0,0,1,18,32Z" />
-      <circle cx="25.16" cy="14.28" r="1.8" />
-      <circle cx="11.41" cy="14.28" r="1.8" />
-      <path d="M18.16,20a9,9,0,0,0-7.33,3.78,1,1,0,1,0,1.63,1.16,7,7,0,0,1,11.31-.13,1,1,0,0,0,1.6-1.2A9,9,0,0,0,18.16,20Z" />
-    </svg>
-    <h1 class="text-3xl font-bold text-gray-700 mb-4">404</h1>
-    <p class="text-gray-600 mb-8">お探しのページが見つかりませんでした。</p>
-    <a href="/" class="px-6 py-3 border rounded-sm font-bold text-sm no-underline text-gray-700 hover:bg-gray-100">
+    <div class="neon-404">404</div>
+    <p class="text-gray-400 mb-8 text-lg">お探しのページが見つかりませんでした。</p>
+    <a href="/" class="home-link">
       トップページへ戻る
     </a>
   </div>
 </BaseLayout>
+
+<style>
+  @reference "../styles/global.css";
+  .neon-404 {
+    @apply text-8xl font-bold mb-6;
+    color: var(--color-primary);
+    text-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary), 0 0 80px var(--color-neon-pink);
+  }
+  .home-link {
+    @apply inline-block px-8 py-3 text-sm font-bold no-underline rounded-full transition-all duration-300;
+    color: var(--color-neon-cyan);
+    border: 1px solid var(--color-neon-cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  }
+  .home-link:hover {
+    @apply text-white;
+    background: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  }
+</style>

@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Sidemenu from '../components/Sidemenu.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -43,54 +42,26 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="@nakanakamu0828" />
   <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={pageDescription} />
 </head>
 <body>
   <Header />
-  <div class="layout-container">
-    <main class="layout-main">
-      <slot />
-    </main>
-    <div class="layout-sidemenu">
-      <Sidemenu />
-    </div>
-  </div>
+  <main class="layout-main">
+    <slot />
+  </main>
   <Footer />
 </body>
 </html>
 
 <style>
-  @reference "tailwindcss";
-  .layout-container {
-    @apply w-full flex flex-wrap mx-auto px-2 pt-8 mt-8;
-  }
+  @reference "../styles/global.css";
   .layout-main {
-    @apply w-full pb-8 text-gray-900 leading-normal;
-  }
-  .layout-sidemenu {
-    @apply w-full text-xl text-gray-800 leading-normal;
-  }
-  @media (min-width: 640px) {
-    .layout-container { max-width: 640px; }
-  }
-  @media (min-width: 768px) {
-    .layout-container { max-width: 768px; }
+    @apply w-full max-w-5xl mx-auto px-4 pt-20 pb-12;
   }
   @media (min-width: 1024px) {
-    .layout-container {
-      max-width: 1024px;
-      @apply pt-12;
-    }
     .layout-main {
-      @apply w-2/3 mt-0 pr-6;
+      @apply pt-24;
     }
-    .layout-sidemenu {
-      @apply w-1/3 pl-6;
-    }
-  }
-  @media (min-width: 1280px) {
-    .layout-container { max-width: 1280px; }
   }
 </style>

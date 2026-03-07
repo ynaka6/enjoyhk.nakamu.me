@@ -6,11 +6,11 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 <BaseLayout title="プライバシーポリシー">
   <Breadcrumb items={[{ label: 'プライバシーポリシー' }]} />
 
-  <h1 class="text-center w-full font-bold mb-10 text-3xl">プライバシーポリシー</h1>
+  <h1 class="text-center w-full font-bold mb-10 text-3xl text-white">プライバシーポリシー</h1>
 
-  <div class="px-4 text-gray-700 leading-relaxed">
+  <div class="policy-content">
     <section class="mb-8">
-      <h2 class="text-xl font-bold mb-4">広告の配信について</h2>
+      <h2 class="policy-heading">広告の配信について</h2>
       <p class="mb-4">
         当サイトは第三者配信の広告サービス「Google Adsense グーグルアドセンス」を利用しています。
         広告配信事業者は、ユーザーの興味に応じた広告を表示するためにCookie（クッキー）を使用することがあります。
@@ -24,7 +24,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     </section>
 
     <section class="mb-8">
-      <h2 class="text-xl font-bold mb-4">アクセス解析ツールについて</h2>
+      <h2 class="policy-heading">アクセス解析ツールについて</h2>
       <p class="mb-4">
         当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。
         このGoogleアナリティクスはトラフィックデータの収集のためにCookieを使用しています。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。
@@ -36,7 +36,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     </section>
 
     <section class="mb-8">
-      <h2 class="text-xl font-bold mb-4">当サイトへのコメントについて</h2>
+      <h2 class="policy-heading">当サイトへのコメントについて</h2>
       <p class="mb-4">
         当サイトでは、スパム・荒らしへの対応として、コメントの際に使用されたIPアドレスを記録しています。
         これはブログの標準機能としてサポートされている機能で、スパム・荒らしへの対応以外にこのIPアドレスを使用することはありません。
@@ -44,7 +44,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         全てのコメントは管理人が事前にその内容を確認し、承認した上での掲載となりますことをあらかじめご了承下さい。
         加えて、次の各号に掲げる内容を含むコメントは管理人の裁量によって承認せず、削除する事があります。
       </p>
-      <ul class="list-disc pl-6 mb-4">
+      <ul class="list-disc pl-6 mb-4 text-gray-300">
         <li>特定の自然人または法人を誹謗し、中傷するもの。</li>
         <li>極度にわいせつな内容を含むもの。</li>
         <li>禁制品の取引に関するものや、他者を害する行為の依頼など、法律によって禁止されている物品、行為の依頼や斡旋などに関するもの。</li>
@@ -53,7 +53,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     </section>
 
     <section class="mb-8">
-      <h2 class="text-xl font-bold mb-4">免責事項</h2>
+      <h2 class="policy-heading">免責事項</h2>
       <p class="mb-4">
         当サイトで掲載している画像の著作権・肖像権等は各権利所有者に帰属致します。権利を侵害する目的ではございません。
         記事の内容や掲載画像等に問題がございましたら、各権利所有者様本人が直接メールでご連絡下さい。確認後、対応させて頂きます。
@@ -68,3 +68,19 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  @reference "../../styles/global.css";
+  .policy-content {
+    @apply text-gray-300 leading-relaxed;
+    background: var(--color-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    @apply rounded-xl p-6;
+  }
+  .policy-heading {
+    @apply text-xl font-bold mb-4 text-white;
+    border-left: 3px solid var(--color-primary);
+    padding-left: 0.75rem;
+    box-shadow: -3px 0 10px rgba(255, 70, 70, 0.2);
+  }
+</style>

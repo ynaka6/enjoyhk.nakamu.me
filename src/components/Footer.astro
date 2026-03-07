@@ -1,50 +1,85 @@
 ---
 ---
 
-<footer>
+<footer class="footer">
   <div class="footer-container">
-    <div class="leader-board">
-      <a href="https://overseas.blogmura.com/hongkong/ranking.html" target="_blank" rel="nofollow noopener noreferrer" class="none-external-link">
-        <img src="https://b.blogmura.com/overseas/hongkong/88_31.gif" alt="にほんブログ村 海外生活ブログ 香港情報へ" width="88" height="31" />
-      </a>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div>
+          <span class="brand-text">Enjoy</span><span class="brand-hk">HK</span>
+        </div>
+        <p class="brand-desc">香港の魅力を日本語で発信するメディア</p>
+      </div>
+      <div class="footer-links">
+        <a href="/posts">記事一覧</a>
+        <a href="/contact">お問い合わせ</a>
+        <a href="/policy/privacy">プライバシーポリシー</a>
+        <a href="/made-with">About</a>
+      </div>
     </div>
-    <p class="copyright">
-      &copy; {new Date().getFullYear()} nakamu. All rights reserved.
-    </p>
-    <p class="made-with">
-      Made with&nbsp;
-      <a href="https://astro.build/" target="_blank" rel="nofollow noopener noreferrer">Astro</a>
-      &nbsp;&&nbsp;
-      <a href="https://www.netlify.com/" target="_blank" rel="nofollow noopener noreferrer">Netlify</a>
-    </p>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {new Date().getFullYear()} Enjoy HK. All rights reserved.
+      </p>
+      <div class="footer-external">
+        <a href="https://overseas.blogmura.com/hongkong/ranking.html" target="_blank" rel="nofollow noopener noreferrer" class="none-external-link">
+          <img src="https://b.blogmura.com/overseas/hongkong/88_31.gif" alt="にほんブログ村 海外生活ブログ 香港情報へ" width="88" height="31" />
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <style>
-  @reference "tailwindcss";
-  .footer-container {
-    @apply mt-10 p-6 mx-auto px-4;
+  @reference "../styles/global.css";
+  .footer {
+    @apply border-t border-gray-800 mt-16;
+    background: var(--color-dark-card);
   }
-  .leader-board {
-    @apply flex flex-row justify-center mt-4 mb-10;
+  .footer-container {
+    @apply max-w-5xl mx-auto px-4 py-10;
+  }
+  .footer-top {
+    @apply flex flex-col gap-6;
+  }
+  .footer-brand {
+    @apply flex flex-col gap-1;
+  }
+  .brand-text {
+    @apply text-xl font-bold text-white;
+  }
+  .brand-hk {
+    @apply text-xl font-bold text-primary;
+    text-shadow: 0 0 10px var(--color-primary);
+  }
+  .brand-desc {
+    @apply text-sm text-gray-500 mt-1;
+  }
+  .footer-links {
+    @apply flex flex-wrap gap-4;
+  }
+  .footer-links a {
+    @apply text-sm text-gray-400 no-underline;
+  }
+  .footer-links a:hover {
+    @apply text-primary;
+  }
+  .footer-divider {
+    @apply my-6 border-t border-gray-800;
+  }
+  .footer-bottom {
+    @apply flex flex-col gap-4 items-center;
   }
   .copyright {
-    @apply w-full text-xs text-center;
-  }
-  .made-with {
-    @apply flex items-center justify-center text-xs text-center mt-4;
-  }
-  @media (min-width: 640px) {
-    .footer-container { max-width: 640px; }
-    .copyright { @apply text-sm; }
+    @apply text-xs text-gray-600;
   }
   @media (min-width: 768px) {
-    .footer-container { max-width: 768px; }
-  }
-  @media (min-width: 1024px) {
-    .footer-container { max-width: 1024px; }
-  }
-  @media (min-width: 1280px) {
-    .footer-container { max-width: 1280px; }
+    .footer-top {
+      @apply flex-row justify-between items-start;
+    }
+    .footer-bottom {
+      @apply flex-row justify-between;
+    }
   }
 </style>

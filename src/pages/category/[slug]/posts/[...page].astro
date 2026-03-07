@@ -34,22 +34,25 @@ const categoryName = category?.name || slug;
     { label: categoryName },
   ]} />
 
-  <h1 class="text-center w-full font-bold mb-10 text-3xl relative inline-block px-5">
-    {categoryName}
+  <h1 class="section-title">
+    <span class="section-title-text">{categoryName}</span>
+    <span class="section-title-line"></span>
   </h1>
 
-  {page.data.map((post) => (
-    <PostCard
-      title={post.data.title}
-      description={post.data.description}
-      category={post.data.category}
-      tags={post.data.tags}
-      created_at={post.data.created_at}
-      hero={post.data.hero}
-      slug={getPostSlug(post.id)}
-      status={post.data.status}
-    />
-  ))}
+  <div class="posts-grid">
+    {page.data.map((post) => (
+      <PostCard
+        title={post.data.title}
+        description={post.data.description}
+        category={post.data.category}
+        tags={post.data.tags}
+        created_at={post.data.created_at}
+        hero={post.data.hero}
+        slug={getPostSlug(post.id)}
+        status={post.data.status}
+      />
+    ))}
+  </div>
 
   <Pagination
     currentPage={page.currentPage}
@@ -57,3 +60,28 @@ const categoryName = category?.name || slug;
     basePath={`/category/${slug}/posts`}
   />
 </BaseLayout>
+
+<style>
+  @reference "../../../../styles/global.css";
+  .section-title {
+    @apply flex items-center gap-4 mb-6;
+  }
+  .section-title-text {
+    @apply text-lg font-bold text-white tracking-widest;
+    text-shadow: 0 0 10px rgba(255, 70, 70, 0.4);
+  }
+  .section-title-line {
+    @apply flex-1 h-px;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+    box-shadow: 0 0 5px rgba(255, 70, 70, 0.3);
+  }
+  .posts-grid {
+    @apply grid grid-cols-1 gap-4;
+  }
+  @media (min-width: 768px) {
+    .posts-grid { @apply grid-cols-2; }
+  }
+  @media (min-width: 1024px) {
+    .posts-grid { @apply grid-cols-3; }
+  }
+</style>

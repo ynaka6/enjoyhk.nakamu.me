@@ -12,26 +12,24 @@ const { items } = Astro.props;
 ---
 
 <nav class="breadcrumb-nav">
-  <div class="container">
-    <ol class="breadcrumb">
+  <ol class="breadcrumb">
+    <li>
+      <a href="/">TOP</a>
+    </li>
+    {items.map((item) => (
       <li>
-        <a href="/">TOP</a>
+        {item.href ? (
+          <a href={item.href}>{item.label}</a>
+        ) : (
+          <span>{item.label}</span>
+        )}
       </li>
-      {items.map((item, i) => (
-        <li>
-          {item.href ? (
-            <a href={item.href}>{item.label}</a>
-          ) : (
-            <span>{item.label}</span>
-          )}
-        </li>
-      ))}
-    </ol>
-  </div>
+    ))}
+  </ol>
 </nav>
 
 <style>
-  @reference "tailwindcss";
+  @reference "../styles/global.css";
   .breadcrumb-nav {
     @apply w-full overflow-x-scroll whitespace-nowrap;
     scrollbar-width: none;
@@ -39,35 +37,23 @@ const { items } = Astro.props;
   .breadcrumb-nav::-webkit-scrollbar {
     display: none;
   }
-  .container {
-    @apply mx-auto h-full;
-  }
   .breadcrumb {
-    @apply flex text-gray-600 px-4 py-6 overflow-x-scroll whitespace-nowrap;
+    @apply flex text-gray-500 py-4 overflow-x-scroll whitespace-nowrap text-sm;
   }
   .breadcrumb > li {
     @apply flex items-center;
   }
   .breadcrumb > li + li:before {
     content: '\227B';
-    @apply mx-2;
+    @apply mx-2 text-gray-600;
   }
   .breadcrumb > li a {
-    @apply font-bold no-underline;
+    @apply font-medium no-underline text-neon-cyan;
+  }
+  .breadcrumb > li a:hover {
+    @apply text-primary;
   }
   .breadcrumb > li span {
-    @apply text-black;
-  }
-  @media (min-width: 640px) {
-    .container { max-width: 640px; }
-  }
-  @media (min-width: 768px) {
-    .container { max-width: 768px; }
-  }
-  @media (min-width: 1024px) {
-    .container { max-width: 1024px; }
-  }
-  @media (min-width: 1280px) {
-    .container { max-width: 1280px; }
+    @apply text-gray-300;
   }
 </style>
