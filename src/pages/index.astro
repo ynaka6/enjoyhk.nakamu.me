@@ -22,11 +22,7 @@ const gridPosts = posts.slice(1, 13);
     <section class="hero">
       <a href={`/post/${heroSlug}/`} class="hero-link">
         <div class="hero-image">
-          {heroImage ? (
-            <img src={heroImage} alt={heroPost.data.title} />
-          ) : (
-            <div class="hero-placeholder"></div>
-          )}
+          <img src={heroImage || '/images/no-image-hk.svg'} alt={heroPost.data.title} />
           <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -92,10 +88,6 @@ const gridPosts = posts.slice(1, 13);
   }
   .hero-image img {
     @apply w-full h-full object-cover;
-  }
-  .hero-placeholder {
-    @apply w-full h-full;
-    background: linear-gradient(135deg, var(--theme-surface) 0%, var(--theme-card) 100%);
   }
   .hero-overlay {
     @apply absolute inset-0;

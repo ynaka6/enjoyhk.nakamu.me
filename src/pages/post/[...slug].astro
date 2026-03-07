@@ -39,11 +39,9 @@ const categorySlug = getCategorySlug(post.data.category);
   ]} />
 
   <article class="article">
-    {heroSrc && (
-      <div class="article-hero">
-        <img src={heroSrc} alt={post.data.title} loading="lazy" />
-      </div>
-    )}
+    <div class="article-hero">
+      <img src={heroSrc || '/images/no-image-hk.svg'} alt={post.data.title} loading="lazy" />
+    </div>
 
     <div class="article-header">
       <a href={`/category/${categorySlug}/posts`} class="article-category">
