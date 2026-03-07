@@ -57,6 +57,7 @@ typings/
 # build output
 .cache/
 dist/
+.astro/
 
 # Mac files
 .DS_Store
