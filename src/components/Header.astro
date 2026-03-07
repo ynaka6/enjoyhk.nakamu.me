@@ -5,6 +5,15 @@ import { siteMetadata, categories } from '../lib/data';
 <header class="header">
   <div class="header-container">
     <a href="/" class="logo">
+      <svg class="logo-icon" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+        <g transform="translate(16,16)" fill="currentColor" opacity="0.9">
+          <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(0)"/>
+          <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(72)"/>
+          <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(144)"/>
+          <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(216)"/>
+          <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(288)"/>
+        </g>
+      </svg>
       <span class="logo-text">Enjoy</span><span class="logo-hk">HK</span>
     </a>
     <div class="header-right">
@@ -75,14 +84,24 @@ import { siteMetadata, categories } from '../lib/data';
     @apply max-w-5xl mx-auto flex items-center justify-between px-4 py-3;
   }
   .logo {
-    @apply flex items-baseline gap-0.5 no-underline;
+    @apply flex items-center gap-1.5 no-underline;
+  }
+  .logo-icon {
+    color: var(--color-primary);
+    filter: drop-shadow(0 0 4px var(--theme-glow-primary-soft));
   }
   .logo-text {
-    @apply text-2xl font-bold;
+    @apply text-2xl tracking-tight;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
     color: var(--theme-text-heading);
   }
   .logo-hk {
-    @apply text-2xl font-bold text-primary;
+    @apply text-2xl tracking-tight text-primary;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
     text-shadow: var(--theme-neon-text);
   }
   .header-right {

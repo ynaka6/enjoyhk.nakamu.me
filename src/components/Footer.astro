@@ -5,7 +5,16 @@
   <div class="footer-container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div>
+        <div class="brand-logo">
+          <svg class="brand-icon" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true">
+            <g transform="translate(16,16)" fill="currentColor" opacity="0.9">
+              <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(0)"/>
+              <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(72)"/>
+              <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(144)"/>
+              <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(216)"/>
+              <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(288)"/>
+            </g>
+          </svg>
           <span class="brand-text">Enjoy</span><span class="brand-hk">HK</span>
         </div>
         <p class="brand-desc">香港の魅力を日本語で発信するメディア</p>
@@ -48,12 +57,24 @@
   .footer-brand {
     @apply flex flex-col gap-1;
   }
+  .brand-logo {
+    @apply flex items-center gap-1.5;
+  }
+  .brand-icon {
+    color: var(--color-primary);
+  }
   .brand-text {
-    @apply text-xl font-bold;
+    @apply text-xl tracking-tight;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
     color: var(--theme-text-heading);
   }
   .brand-hk {
-    @apply text-xl font-bold text-primary;
+    @apply text-xl tracking-tight text-primary;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 700;
+    font-style: italic;
     text-shadow: var(--theme-neon-text);
   }
   .brand-desc {
