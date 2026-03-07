@@ -77,13 +77,13 @@ const categorySlug = getCategorySlug(post.data.category);
   <!-- Previous / Next navigation -->
   <nav class="flex justify-between mt-8 gap-4">
     {prev ? (
-      <a href={`/post/${getPostSlug(prev.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 hover:bg-gray-100">
+      <a href={`/post/${getPostSlug(prev.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 bg-white hover:bg-gray-100">
         <span class="text-xs text-gray-500">&laquo; 前の記事</span>
         <p class="text-sm font-bold mt-1">{prev.data.title}</p>
       </a>
     ) : <div class="flex-1"></div>}
     {next ? (
-      <a href={`/post/${getPostSlug(next.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 hover:bg-gray-100 text-right">
+      <a href={`/post/${getPostSlug(next.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 bg-white hover:bg-gray-100 text-right">
         <span class="text-xs text-gray-500">次の記事 &raquo;</span>
         <p class="text-sm font-bold mt-1">{next.data.title}</p>
       </a>
