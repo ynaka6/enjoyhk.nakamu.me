@@ -11,7 +11,7 @@ status: writting
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 
 ## 写真（メニュー・店舗）

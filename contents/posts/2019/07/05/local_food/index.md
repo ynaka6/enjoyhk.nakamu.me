@@ -11,7 +11,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 本日は、**佐敦**にあるローカルフード店でランチを食べてきました。
 

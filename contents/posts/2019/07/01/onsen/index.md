@@ -11,7 +11,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 先日の投稿「[香港エアポートエクスプレスで空港へ](https://enjoyhk.nakamu.life/post/2019/06/28/airport_express/)」で、日本に一時帰国する旨お伝えさせて頂きましたが、その際に「**平和島温泉**」に立ち寄ってみました。  
 

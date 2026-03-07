@@ -8,7 +8,7 @@ updated_at: "2019-07-02 12:00"
 status: published
 ---
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 私は、**SE（システムエンジニア）**とか**PG（プログラマー）**とか言われているITのお仕事をしています。  
 そのITに関連する情報ですが、現在香港のサイトに向けて[DDos攻撃](https://boxil.jp/mag/a2503/)というネット攻撃が進行中のようです。  

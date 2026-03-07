@@ -11,7 +11,7 @@ status: writting
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 今回は娘とよく土日に遊びに出かける「**D・PARK**」をご紹介します。  
 **荃灣**駅から徒歩10分程で**D・PARK**に行くことができます。

@@ -11,7 +11,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 今回は、娘が「**自転車に乗りたい**」と言うので**レンタサイクル**に行ってきました。  
 以前[「将軍澳運動場」まで家族で散歩しに行きました](https://enjoyhk.nakamu.life/post/2019/05/25/tseung_kwan_o/)で紹介しましたが、**單車館停車場**にレンタサイクルがあります。  
