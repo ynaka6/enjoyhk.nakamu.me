@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff4646;
+  --color-twitter: #38A1F3;
+  --color-instagram: #000;
+  --color-feedly: #2bb24c;
+}
 
 body {
   @apply bg-gray-100 font-sans;
@@ -74,11 +79,11 @@ svg {
 }
 .post-content ul {
   list-style-type: disc;
-  padding-left: theme('padding.6');
+  padding-left: var(--spacing-6);
 }
 .post-content ol {
   list-style-type: decimal;
-  padding-left: theme('padding.6');
+  padding-left: var(--spacing-6);
 }
 .post-content table {
   @apply border w-full my-6;
@@ -99,7 +104,7 @@ svg {
 
 /* Syntax highlighting - using Astro's built-in shiki */
 pre {
-  @apply p-4 rounded mb-4 overflow-x-auto;
+  @apply p-4 rounded-sm mb-4 overflow-x-auto;
 }
 code {
   @apply text-sm;
