@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="60%" stop-color="#16213e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f3460"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+  </defs>
+  <!-- Sky -->
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <!-- Stars -->
+  <circle cx="120" cy="60" r="1.5" fill="#fff" opacity="0.6"/>
+  <circle cx="300" cy="40" r="1" fill="#fff" opacity="0.4"/>
+  <circle cx="500" cy="80" r="1.5" fill="#fff" opacity="0.5"/>
+  <circle cx="650" cy="50" r="1" fill="#fff" opacity="0.3"/>
+  <circle cx="750" cy="90" r="1.5" fill="#fff" opacity="0.4"/>
+  <circle cx="200" cy="100" r="1" fill="#fff" opacity="0.3"/>
+  <circle cx="580" cy="30" r="1" fill="#fff" opacity="0.5"/>
+  <!-- Victoria Harbour skyline -->
+  <!-- IFC Tower -->
+  <rect x="180" y="140" width="30" height="180" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="188" y="130" width="14" height="10" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="193" y="115" width="4" height="15" fill="#3a506b"/>
+  <!-- ICC Tower -->
+  <rect x="340" y="120" width="35" height="200" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <polygon points="340,120 357,95 375,120" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <!-- Bank of China -->
+  <polygon points="260,150 280,150 290,320 250,320" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <line x1="260" y1="150" x2="290" y2="320" stroke="#3a506b" stroke-width="0.5"/>
+  <line x1="280" y1="150" x2="250" y2="320" stroke="#3a506b" stroke-width="0.5"/>
+  <!-- Central Plaza -->
+  <rect x="420" y="160" width="25" height="160" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <polygon points="420,160 432,140 445,160" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <!-- Shorter buildings -->
+  <rect x="100" y="240" width="40" height="80" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="145" y="220" width="30" height="100" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="215" y="230" width="35" height="90" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="295" y="250" width="40" height="70" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="380" y="240" width="35" height="80" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="450" y="250" width="30" height="70" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="485" y="230" width="35" height="90" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="525" y="260" width="25" height="60" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="555" y="240" width="40" height="80" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="600" y="250" width="30" height="70" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="635" y="260" width="35" height="60" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="675" y="270" width="25" height="50" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <rect x="55" y="260" width="40" height="60" fill="#1e2a45" stroke="#3a506b" stroke-width="0.5"/>
+  <!-- Building windows (tiny dots of light) -->
+  <g fill="#e8d44d" opacity="0.6">
+    <rect x="186" y="160" width="2" height="2"/><rect x="192" y="175" width="2" height="2"/>
+    <rect x="198" y="190" width="2" height="2"/><rect x="186" y="210" width="2" height="2"/>
+    <rect x="195" y="230" width="2" height="2"/><rect x="186" y="250" width="2" height="2"/>
+    <rect x="350" y="140" width="2" height="2"/><rect x="360" y="165" width="2" height="2"/>
+    <rect x="348" y="190" width="2" height="2"/><rect x="358" y="215" width="2" height="2"/>
+    <rect x="350" y="240" width="2" height="2"/><rect x="362" y="260" width="2" height="2"/>
+    <rect x="265" y="180" width="2" height="2"/><rect x="270" y="210" width="2" height="2"/>
+    <rect x="260" y="250" width="2" height="2"/><rect x="275" y="280" width="2" height="2"/>
+    <rect x="428" y="180" width="2" height="2"/><rect x="432" y="210" width="2" height="2"/>
+    <rect x="426" y="250" width="2" height="2"/>
+    <rect x="110" y="255" width="2" height="2"/><rect x="125" y="270" width="2" height="2"/>
+    <rect x="495" y="250" width="2" height="2"/><rect x="505" y="270" width="2" height="2"/>
+    <rect x="565" y="260" width="2" height="2"/><rect x="575" y="275" width="2" height="2"/>
+  </g>
+  <!-- Water / harbour -->
+  <rect x="0" y="320" width="800" height="130" fill="url(#water)"/>
+  <!-- Water reflections -->
+  <g stroke="#3a6fa0" stroke-width="0.5" opacity="0.3">
+    <line x1="50" y1="340" x2="90" y2="340"/>
+    <line x1="150" y1="355" x2="210" y2="355"/>
+    <line x1="300" y1="345" x2="380" y2="345"/>
+    <line x1="450" y1="360" x2="520" y2="360"/>
+    <line x1="600" y1="350" x2="660" y2="350"/>
+    <line x1="100" y1="375" x2="170" y2="375"/>
+    <line x1="350" y1="380" x2="420" y2="380"/>
+    <line x1="550" y1="385" x2="630" y2="385"/>
+    <line x1="200" y1="400" x2="250" y2="400"/>
+    <line x1="500" y1="410" x2="570" y2="410"/>
+  </g>
+  <!-- "NO IMAGE" text -->
+  <text x="400" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#5a7a9a" letter-spacing="4" opacity="0.6">NO IMAGE</text>
+</svg>

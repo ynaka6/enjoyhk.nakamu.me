@@ -18,18 +18,11 @@ const heroSrc = resolveHeroImage(hero, slug);
 ---
 
 <a href={`/post/${slug}/`} class="card block">
-  {heroSrc ? (
-    <div class="card-image">
-      <img src={heroSrc} alt={title} loading="lazy" />
-      <span class="category-badge">{category}</span>
-      {status === 'writting' && <span class="draft-badge">下書き</span>}
-    </div>
-  ) : (
-    <div class="card-noimage">
-      <span class="category-badge-inline">{category}</span>
-      {status === 'writting' && <span class="draft-badge-inline">下書き</span>}
-    </div>
-  )}
+  <div class="card-image">
+    <img src={heroSrc || '/images/no-image-hk.svg'} alt={title} loading="lazy" />
+    <span class="category-badge">{category}</span>
+    {status === 'writting' && <span class="draft-badge">下書き</span>}
+  </div>
   <div class="card-body">
     <h2 class="card-title">{title}</h2>
     <p class="card-desc">{description}</p>
@@ -65,18 +58,6 @@ const heroSrc = resolveHeroImage(hero, slug);
   }
   .card:hover .card-image img {
     transform: scale(1.05);
-  }
-  .card-noimage {
-    @apply flex items-center gap-2 px-4 pt-4;
-  }
-  .category-badge-inline {
-    @apply px-3 py-1 text-xs font-bold text-white rounded-full;
-    background: rgba(255, 70, 70, 0.85);
-  }
-  .draft-badge-inline {
-    @apply px-3 py-1 text-xs font-bold text-yellow-300 rounded-full;
-    background: rgba(255, 225, 86, 0.2);
-    border: 1px solid rgba(255, 225, 86, 0.5);
   }
   .category-badge {
     @apply absolute top-3 left-3 px-3 py-1 text-xs font-bold text-white rounded-full;
