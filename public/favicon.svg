@@ -1,28 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ff4646"/>
       <stop offset="100%" stop-color="#e02020"/>
     </linearGradient>
   </defs>
-  <rect width="32" height="32" rx="7" fill="url(#g)"/>
-  <!-- Bauhinia 5 petals -->
-  <g transform="translate(16,15)" fill="#fff" opacity="0.95">
-    <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(0)"/>
-    <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(72)"/>
-    <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(144)"/>
-    <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(216)"/>
-    <ellipse cx="0" cy="-5.5" rx="3.2" ry="6" transform="rotate(288)"/>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <!-- Bauhinia petals - asymmetric, curving outward like golden sculpture -->
+  <g transform="translate(32,32)" fill="#fff" opacity="0.95">
+    <path d="M0,1 C-2,-3 -6,-8 -7,-13 C-7.5,-15.5 -6,-17 -4,-17.5 C-2.5,-18 -1,-17 0,-15 C0,-17 0.5,-19.5 2,-20 C3.5,-20.5 5.5,-19 5,-16 C4.5,-13 2,-7 0,1Z" transform="rotate(0)"/>
+    <path d="M0,1 C-2,-3 -6,-8 -7,-13 C-7.5,-15.5 -6,-17 -4,-17.5 C-2.5,-18 -1,-17 0,-15 C0,-17 0.5,-19.5 2,-20 C3.5,-20.5 5.5,-19 5,-16 C4.5,-13 2,-7 0,1Z" transform="rotate(72)"/>
+    <path d="M0,1 C-2,-3 -6,-8 -7,-13 C-7.5,-15.5 -6,-17 -4,-17.5 C-2.5,-18 -1,-17 0,-15 C0,-17 0.5,-19.5 2,-20 C3.5,-20.5 5.5,-19 5,-16 C4.5,-13 2,-7 0,1Z" transform="rotate(144)"/>
+    <path d="M0,1 C-2,-3 -6,-8 -7,-13 C-7.5,-15.5 -6,-17 -4,-17.5 C-2.5,-18 -1,-17 0,-15 C0,-17 0.5,-19.5 2,-20 C3.5,-20.5 5.5,-19 5,-16 C4.5,-13 2,-7 0,1Z" transform="rotate(216)"/>
+    <path d="M0,1 C-2,-3 -6,-8 -7,-13 C-7.5,-15.5 -6,-17 -4,-17.5 C-2.5,-18 -1,-17 0,-15 C0,-17 0.5,-19.5 2,-20 C3.5,-20.5 5.5,-19 5,-16 C4.5,-13 2,-7 0,1Z" transform="rotate(288)"/>
   </g>
-  <!-- Petal veins -->
-  <g transform="translate(16,15)" stroke="#e02020" stroke-width="0.5" fill="none" opacity="0.5">
-    <line x1="0" y1="0" x2="0" y2="-8" transform="rotate(0)"/>
-    <line x1="0" y1="0" x2="0" y2="-8" transform="rotate(72)"/>
-    <line x1="0" y1="0" x2="0" y2="-8" transform="rotate(144)"/>
-    <line x1="0" y1="0" x2="0" y2="-8" transform="rotate(216)"/>
-    <line x1="0" y1="0" x2="0" y2="-8" transform="rotate(288)"/>
+  <!-- Curving veins -->
+  <g transform="translate(32,32)" stroke="#e02020" stroke-width="0.6" fill="none" opacity="0.35">
+    <path d="M0,-2 C-1,-7 -2,-12 -1,-17" transform="rotate(0)"/>
+    <path d="M0,-2 C1,-7 2,-12 1,-17" transform="rotate(0)"/>
+    <path d="M0,-2 C-1,-7 -2,-12 -1,-17" transform="rotate(72)"/>
+    <path d="M0,-2 C1,-7 2,-12 1,-17" transform="rotate(72)"/>
+    <path d="M0,-2 C-1,-7 -2,-12 -1,-17" transform="rotate(144)"/>
+    <path d="M0,-2 C1,-7 2,-12 1,-17" transform="rotate(144)"/>
+    <path d="M0,-2 C-1,-7 -2,-12 -1,-17" transform="rotate(216)"/>
+    <path d="M0,-2 C1,-7 2,-12 1,-17" transform="rotate(216)"/>
+    <path d="M0,-2 C-1,-7 -2,-12 -1,-17" transform="rotate(288)"/>
+    <path d="M0,-2 C1,-7 2,-12 1,-17" transform="rotate(288)"/>
   </g>
-  <!-- Center -->
-  <circle cx="16" cy="15" r="1.8" fill="#fff"/>
-  <circle cx="16" cy="15" r="0.8" fill="#e02020"/>
+  <circle cx="32" cy="32" r="2.5" fill="#fff" opacity="0.7"/>
 </svg>
