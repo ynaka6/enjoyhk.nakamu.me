@@ -1,0 +1,35 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+const prevUrl = currentPage > 1
+  ? currentPage === 2 ? basePath : `${basePath}/${currentPage - 1}`
+  : null;
+const nextUrl = currentPage < totalPages
+  ? `${basePath}/${currentPage + 1}`
+  : null;
+---
+
+{totalPages > 1 && (
+  <div class="flex justify-between items-center mt-8 px-4">
+    {prevUrl ? (
+      <a href={prevUrl} class="px-4 py-2 border rounded-sm font-bold text-sm no-underline text-gray-700 hover:bg-gray-100">
+        &laquo; 前のページ
+      </a>
+    ) : (
+      <span></span>
+    )}
+    <span class="text-sm text-gray-600">{currentPage} / {totalPages}</span>
+    {nextUrl ? (
+      <a href={nextUrl} class="px-4 py-2 border rounded-sm font-bold text-sm no-underline text-gray-700 hover:bg-gray-100">
+        次のページ &raquo;
+      </a>
+    ) : (
+      <span></span>
+    )}
+  </div>
+)}

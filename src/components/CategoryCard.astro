@@ -1,0 +1,52 @@
+---
+interface Props {
+  name: string;
+  slug: string;
+}
+
+const { name, slug } = Astro.props;
+const imageMap: Record<string, string> = {
+  gourmet: '/images/category/gourmet.jpg',
+  sightseeing: '/images/category/sightseeing.jpg',
+  life: '/images/category/life.jpg',
+  other: '/images/category/other.jpg',
+};
+const imageSrc = imageMap[slug] || '/images/category/other.jpg';
+---
+
+<a href={`/category/${slug}/posts`} class="card-link none-external-link no-underline">
+  <div class="content">
+    <img src={imageSrc} alt={name} class="image" loading="lazy" />
+    <div class="overlay"></div>
+    <span class="title">{name}</span>
+  </div>
+</a>
+
+<style>
+  @reference "tailwindcss";
+  .card-link {
+    @apply w-1/4 p-1 block;
+  }
+  .content {
+    @apply w-full relative;
+  }
+  .image {
+    @apply rounded-lg h-16 w-full object-cover;
+  }
+  .overlay {
+    @apply absolute top-0 left-0 w-full h-full bg-black opacity-50 rounded-lg;
+  }
+  .title {
+    @apply absolute w-full text-center text-sm text-white font-bold;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  @media (min-width: 1024px) {
+    .image {
+      @apply h-32;
+    }
+    .title {
+      @apply text-xl;
+    }
+  }
+</style>

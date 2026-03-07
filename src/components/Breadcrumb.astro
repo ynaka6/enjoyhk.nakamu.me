@@ -1,0 +1,73 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb-nav">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li>
+        <a href="/">TOP</a>
+      </li>
+      {items.map((item, i) => (
+        <li>
+          {item.href ? (
+            <a href={item.href}>{item.label}</a>
+          ) : (
+            <span>{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<style>
+  @reference "tailwindcss";
+  .breadcrumb-nav {
+    @apply w-full overflow-x-scroll whitespace-nowrap;
+    scrollbar-width: none;
+  }
+  .breadcrumb-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .container {
+    @apply mx-auto h-full;
+  }
+  .breadcrumb {
+    @apply flex text-gray-600 px-4 py-6 overflow-x-scroll whitespace-nowrap;
+  }
+  .breadcrumb > li {
+    @apply flex items-center;
+  }
+  .breadcrumb > li + li:before {
+    content: '\227B';
+    @apply mx-2;
+  }
+  .breadcrumb > li a {
+    @apply font-bold no-underline;
+  }
+  .breadcrumb > li span {
+    @apply text-black;
+  }
+  @media (min-width: 640px) {
+    .container { max-width: 640px; }
+  }
+  @media (min-width: 768px) {
+    .container { max-width: 768px; }
+  }
+  @media (min-width: 1024px) {
+    .container { max-width: 1024px; }
+  }
+  @media (min-width: 1280px) {
+    .container { max-width: 1280px; }
+  }
+</style>

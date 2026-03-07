@@ -1,0 +1,96 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Sidemenu from '../components/Sidemenu.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const { title, description, ogType = 'website', ogImage } = Astro.props;
+
+const siteTitle = 'Enjoy HK';
+const siteDescription = '香港移住を自由に楽しく共有していくブログ';
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDescription = description || siteDescription;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={pageDescription} />
+  <title>{pageTitle}</title>
+  <link rel="canonical" href={canonicalUrl.href} />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- OGP -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl.href} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta property="og:site_name" content={siteTitle} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:creator" content="@nakanakamu0828" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+</head>
+<body>
+  <Header />
+  <div class="layout-container">
+    <main class="layout-main">
+      <slot />
+    </main>
+    <div class="layout-sidemenu">
+      <Sidemenu />
+    </div>
+  </div>
+  <Footer />
+</body>
+</html>
+
+<style>
+  @reference "tailwindcss";
+  .layout-container {
+    @apply w-full flex flex-wrap mx-auto px-2 pt-8 mt-8;
+  }
+  .layout-main {
+    @apply w-full pb-8 text-gray-900 leading-normal;
+  }
+  .layout-sidemenu {
+    @apply w-full text-xl text-gray-800 leading-normal;
+  }
+  @media (min-width: 640px) {
+    .layout-container { max-width: 640px; }
+  }
+  @media (min-width: 768px) {
+    .layout-container { max-width: 768px; }
+  }
+  @media (min-width: 1024px) {
+    .layout-container {
+      max-width: 1024px;
+      @apply pt-12;
+    }
+    .layout-main {
+      @apply w-2/3 mt-0 pr-6;
+    }
+    .layout-sidemenu {
+      @apply w-1/3 pl-6;
+    }
+  }
+  @media (min-width: 1280px) {
+    .layout-container { max-width: 1280px; }
+  }
+</style>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+import PostCard from '../components/PostCard.astro';
+import { categories, getPostSlug } from '../lib/data';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter((p) => p.data.status === 'published')
+  .sort((a, b) => new Date(b.data.created_at).getTime() - new Date(a.data.created_at).getTime())
+  .slice(0, 20);
+---
+
+<BaseLayout>
+  <div class="flex flex-wrap mb-6">
+    {categories.map((cat) => (
+      <CategoryCard name={cat.name} slug={cat.slug} />
+    ))}
+  </div>
+
+  {posts.map((post) => (
+    <PostCard
+      title={post.data.title}
+      description={post.data.description}
+      category={post.data.category}
+      tags={post.data.tags}
+      created_at={post.data.created_at}
+      hero={post.data.hero}
+      slug={getPostSlug(post.id)}
+      status={post.data.status}
+    />
+  ))}
+
+  <div class="text-center mt-8">
+    <a href="/posts" class="inline-block px-6 py-3 border rounded-sm font-bold text-sm no-underline text-gray-700 hover:bg-gray-100">
+      すべての記事を見る &raquo;
+    </a>
+  </div>
+</BaseLayout>

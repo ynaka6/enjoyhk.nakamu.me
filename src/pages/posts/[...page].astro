@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getPostSlug } from '../../lib/data';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection('posts');
+  const posts = allPosts
+    .filter((p) => p.data.status === 'published')
+    .sort((a, b) => new Date(b.data.created_at).getTime() - new Date(a.data.created_at).getTime());
+
+  return paginate(posts, { pageSize: 20 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title="記事一覧">
+  <Breadcrumb items={[{ label: '記事一覧' }]} />
+
+  {page.data.map((post) => (
+    <PostCard
+      title={post.data.title}
+      description={post.data.description}
+      category={post.data.category}
+      tags={post.data.tags}
+      created_at={post.data.created_at}
+      hero={post.data.hero}
+      slug={getPostSlug(post.id)}
+      status={post.data.status}
+    />
+  ))}
+
+  <Pagination
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    basePath="/posts"
+  />
+</BaseLayout>

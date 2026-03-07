@@ -1,0 +1,92 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCategorySlug, getTagSlug, formatDate, resolveHeroImage, getPostSlug } from '../../lib/data';
+
+export const getStaticPaths = (async () => {
+  const allPosts = await getCollection('posts');
+  const sortedPosts = allPosts
+    .sort((a, b) => new Date(b.data.created_at).getTime() - new Date(a.data.created_at).getTime());
+
+  return sortedPosts.map((post, index) => {
+    const prev = index < sortedPosts.length - 1 ? sortedPosts[index + 1] : null;
+    const next = index > 0 ? sortedPosts[index - 1] : null;
+    return {
+      params: { slug: getPostSlug(post.id) },
+      props: { post, prev, next },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+const heroSrc = resolveHeroImage(post.data.hero, post.id);
+const categorySlug = getCategorySlug(post.data.category);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  ogImage={heroSrc ? new URL(heroSrc, Astro.site).href : undefined}
+>
+  <Breadcrumb items={[
+    { label: '記事一覧', href: '/posts' },
+    { label: post.data.category, href: `/category/${categorySlug}/posts` },
+    { label: post.data.title },
+  ]} />
+
+  <article class="bg-white mt-4">
+    {heroSrc && (
+      <img src={heroSrc} alt={post.data.title} class="w-full h-auto" loading="lazy" />
+    )}
+
+    <div class="p-4 pt-6">
+      <div class="flex justify-center mb-4">
+        <a href={`/category/${categorySlug}/posts`} class="font-bold text-gray-600 border rounded-full px-4 py-1 text-sm no-underline hover:bg-gray-100">
+          {post.data.category}
+        </a>
+      </div>
+
+      <h1 class="text-2xl font-bold text-center text-gray-900 mb-4">{post.data.title}</h1>
+
+      <div class="flex justify-center flex-wrap mb-4">
+        {post.data.tags.map((tag) => (
+          <a
+            href={`/tag/${getTagSlug(tag)}/posts`}
+            class="bg-red-100 px-4 py-1 mb-1 mr-1 border border-red-400 rounded-full font-bold text-red-700 text-xs whitespace-nowrap no-underline hover:opacity-75"
+          >
+            {tag}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex justify-center items-center gap-4 text-sm text-gray-600 mb-6">
+        <span>公開: {formatDate(post.data.created_at)}</span>
+        <span>更新: {formatDate(post.data.updated_at)}</span>
+      </div>
+    </div>
+
+    <div class="post-content p-4 pt-10 leading-loose">
+      <Content />
+    </div>
+  </article>
+
+  <!-- Previous / Next navigation -->
+  <nav class="flex justify-between mt-8 gap-4">
+    {prev ? (
+      <a href={`/post/${getPostSlug(prev.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 hover:bg-gray-100">
+        <span class="text-xs text-gray-500">&laquo; 前の記事</span>
+        <p class="text-sm font-bold mt-1">{prev.data.title}</p>
+      </a>
+    ) : <div class="flex-1"></div>}
+    {next ? (
+      <a href={`/post/${getPostSlug(next.id)}/`} class="flex-1 p-4 border rounded-sm no-underline text-gray-700 hover:bg-gray-100 text-right">
+        <span class="text-xs text-gray-500">次の記事 &raquo;</span>
+        <p class="text-sm font-bold mt-1">{next.data.title}</p>
+      </a>
+    ) : <div class="flex-1"></div>}
+  </nav>
+</BaseLayout>
