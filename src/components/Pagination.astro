@@ -1,0 +1,53 @@
+---
+interface Props {
+  currentPage: number;
+  totalPages: number;
+  basePath: string;
+}
+
+const { currentPage, totalPages, basePath } = Astro.props;
+const prevUrl = currentPage > 1
+  ? currentPage === 2 ? basePath : `${basePath}/${currentPage - 1}`
+  : null;
+const nextUrl = currentPage < totalPages
+  ? `${basePath}/${currentPage + 1}`
+  : null;
+---
+
+{totalPages > 1 && (
+  <div class="flex justify-between items-center mt-10 px-4">
+    {prevUrl ? (
+      <a href={prevUrl} class="pag-link">
+        &laquo; 前のページ
+      </a>
+    ) : (
+      <span></span>
+    )}
+    <span class="pag-info">{currentPage} / {totalPages}</span>
+    {nextUrl ? (
+      <a href={nextUrl} class="pag-link">
+        次のページ &raquo;
+      </a>
+    ) : (
+      <span></span>
+    )}
+  </div>
+)}
+
+<style>
+  @reference "../styles/global.css";
+  .pag-link {
+    @apply px-5 py-2 rounded-full font-bold text-sm no-underline transition-all duration-300;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+  .pag-link:hover {
+    @apply text-white;
+    background: var(--color-primary);
+    box-shadow: 0 0 15px var(--theme-glow-primary);
+  }
+  .pag-info {
+    @apply text-sm;
+    color: var(--theme-text-faint);
+  }
+</style>

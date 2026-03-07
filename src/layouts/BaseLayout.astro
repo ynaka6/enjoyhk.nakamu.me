@@ -1,0 +1,78 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+  ogImage?: string;
+}
+
+const { title, description, ogType = 'website', ogImage } = Astro.props;
+
+const siteTitle = 'Enjoy HK';
+const siteDescription = '香港移住を自由に楽しく共有していくブログ';
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const pageDescription = description || siteDescription;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={pageDescription} />
+  <title>{pageTitle}</title>
+  <link rel="canonical" href={canonicalUrl.href} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Prevent FOUC: apply theme before render -->
+  <script is:inline>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <!-- OGP -->
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={pageDescription} />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalUrl.href} />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta property="og:site_name" content={siteTitle} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={pageDescription} />
+</head>
+<body>
+  <Header />
+  <main class="layout-main">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
+
+<style>
+  @reference "../styles/global.css";
+  .layout-main {
+    @apply w-full max-w-5xl mx-auto px-4 pt-20 pb-12;
+  }
+  @media (min-width: 1024px) {
+    .layout-main {
+      @apply pt-24;
+    }
+  }
+</style>

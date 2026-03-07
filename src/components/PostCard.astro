@@ -1,0 +1,104 @@
+---
+import { getCategorySlug, getTagSlug, formatDate, resolveHeroImage } from '../lib/data';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  tags: string[];
+  created_at: string;
+  hero?: string;
+  slug: string;
+  status?: string;
+}
+
+const { title, description, category, tags, created_at, hero, slug, status } = Astro.props;
+const categorySlug = getCategorySlug(category);
+const heroSrc = resolveHeroImage(hero, slug);
+---
+
+<a href={`/post/${slug}/`} class="card block">
+  <div class="card-image">
+    <img src={heroSrc || '/images/no-image-hk.svg'} alt={title} loading="lazy" />
+    <span class="category-badge">{category}</span>
+    {status === 'writting' && <span class="draft-badge">下書き</span>}
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <p class="card-desc">{description}</p>
+    <div class="card-meta">
+      <time datetime={created_at}>{formatDate(created_at)}</time>
+      <div class="card-tags">
+        {tags.slice(0, 3).map((tag) => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  @reference "../styles/global.css";
+  .card {
+    @apply rounded-lg overflow-hidden no-underline transition-all duration-300;
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border);
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--theme-hover-card-border);
+    box-shadow: var(--theme-hover-card-shadow);
+  }
+  .card-image {
+    @apply relative w-full overflow-hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .card-image img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+  }
+  .card:hover .card-image img {
+    transform: scale(1.05);
+  }
+  .category-badge {
+    @apply absolute top-3 left-3 px-3 py-1 text-xs font-bold text-white rounded-full;
+    background: rgba(255, 70, 70, 0.85);
+    backdrop-filter: blur(4px);
+  }
+  .draft-badge {
+    @apply absolute top-3 right-3 px-3 py-1 text-xs font-bold text-yellow-300 rounded-full;
+    background: rgba(255, 225, 86, 0.2);
+    border: 1px solid rgba(255, 225, 86, 0.5);
+  }
+  .card-body {
+    @apply p-4;
+  }
+  .card-title {
+    @apply text-base font-bold mb-2 leading-snug;
+    color: var(--theme-text-heading);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-desc {
+    @apply text-sm mb-3 leading-relaxed;
+    color: var(--theme-text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .card-meta {
+    @apply flex items-center justify-between text-xs;
+    color: var(--theme-text-faint);
+  }
+  .card-tags {
+    @apply flex gap-1;
+  }
+  .tag {
+    @apply px-2 py-0.5 rounded-full text-xs;
+    background: var(--theme-tag-bg);
+    color: var(--theme-tag-color);
+    border: 1px solid var(--theme-tag-border);
+  }
+</style>

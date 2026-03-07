@@ -10,7 +10,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 出勤前にフラフラ歩いていたら日本人旅行者を見かけました。  
 どうやら**Royal Pacific Hotel（ロイヤルパシフィックホテル）**に泊まっているようです。  

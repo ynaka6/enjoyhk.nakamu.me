@@ -11,7 +11,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 深圳に出かけた際に食べた「**柳州螺蛳粉**」の紹介です。**タニシ**が入ったライスヌードルになります。  
 お店は「[螺公堂柳州螺蛳粉](http://www.dianping.com/shop/129359105)」になります。

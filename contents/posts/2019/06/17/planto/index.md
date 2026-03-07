@@ -8,7 +8,7 @@ updated_at: "2019-06-17 23:00"
 status: published
 ---
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 皆さんは資産管理アプリ「[Planto](https://www.planto.hk/en/)」をご存知でしょうか？
 私は今年の4月頃に初めて知り、どんな機能があるか知りたいということもあり、使い始めました。

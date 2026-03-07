@@ -1,0 +1,88 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PostCard from '../../../../components/PostCard.astro';
+import Pagination from '../../../../components/Pagination.astro';
+import Breadcrumb from '../../../../components/Breadcrumb.astro';
+import { categories, getCategorySlug, getPostSlug } from '../../../../lib/data';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection('posts');
+  const publishedPosts = allPosts
+    .filter((p) => p.data.status === 'published')
+    .sort((a, b) => new Date(b.data.created_at).getTime() - new Date(a.data.created_at).getTime());
+
+  return categories.flatMap((category) => {
+    const filtered = publishedPosts.filter((p) => p.data.category === category.name);
+    return paginate(filtered, {
+      params: { slug: category.slug },
+      pageSize: 20,
+    });
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const { slug } = Astro.params;
+const category = categories.find((c) => c.slug === slug);
+const categoryName = category?.name || slug;
+---
+
+<BaseLayout title={`${categoryName}の記事一覧`}>
+  <Breadcrumb items={[
+    { label: '記事一覧', href: '/posts' },
+    { label: categoryName },
+  ]} />
+
+  <h1 class="section-title">
+    <span class="section-title-text">{categoryName}</span>
+    <span class="section-title-line"></span>
+  </h1>
+
+  <div class="posts-grid">
+    {page.data.map((post) => (
+      <PostCard
+        title={post.data.title}
+        description={post.data.description}
+        category={post.data.category}
+        tags={post.data.tags}
+        created_at={post.data.created_at}
+        hero={post.data.hero}
+        slug={getPostSlug(post.id)}
+        status={post.data.status}
+      />
+    ))}
+  </div>
+
+  <Pagination
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    basePath={`/category/${slug}/posts`}
+  />
+</BaseLayout>
+
+<style>
+  @reference "../../../../styles/global.css";
+  .section-title {
+    @apply flex items-center gap-4 mb-6;
+  }
+  .section-title-text {
+    @apply text-lg font-bold tracking-widest;
+    color: var(--theme-text-heading);
+    text-shadow: var(--theme-neon-text);
+  }
+  .section-title-line {
+    @apply flex-1 h-px;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+    box-shadow: 0 0 5px var(--theme-glow-primary-line);
+  }
+  .posts-grid {
+    @apply grid grid-cols-1 gap-4;
+  }
+  @media (min-width: 768px) {
+    .posts-grid { @apply grid-cols-2; }
+  }
+  @media (min-width: 1024px) {
+    .posts-grid { @apply grid-cols-3; }
+  }
+</style>

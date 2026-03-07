@@ -1,0 +1,69 @@
+---
+interface Props {
+  name: string;
+  slug: string;
+}
+
+const { name, slug } = Astro.props;
+const imageMap: Record<string, string> = {
+  gourmet: '/images/category/gourmet.jpg',
+  sightseeing: '/images/category/sightseeing.jpg',
+  life: '/images/category/life.jpg',
+  other: '/images/category/other.jpg',
+};
+const imageSrc = imageMap[slug] || '/images/category/other.jpg';
+---
+
+<a href={`/category/${slug}/posts`} class="card-link none-external-link">
+  <div class="content">
+    <img src={imageSrc} alt={name} class="image" loading="lazy" />
+    <div class="overlay"></div>
+    <span class="title">{name}</span>
+    <span class="neon-line"></span>
+  </div>
+</a>
+
+<style>
+  @reference "../styles/global.css";
+  .card-link {
+    @apply block no-underline;
+  }
+  .content {
+    @apply w-full relative rounded-lg overflow-hidden;
+  }
+  .image {
+    @apply w-full h-24 object-cover transition-transform duration-500;
+  }
+  .card-link:hover .image {
+    transform: scale(1.1);
+  }
+  .overlay {
+    @apply absolute top-0 left-0 w-full h-full transition-opacity duration-300;
+    background: linear-gradient(to top, var(--theme-overlay-from) 0%, var(--theme-overlay-to) 100%);
+  }
+  .card-link:hover .overlay {
+    background: linear-gradient(to top, rgba(255, 70, 70, 0.6) 0%, var(--theme-overlay-to) 100%);
+  }
+  .title {
+    @apply absolute w-full text-center text-sm text-white font-bold tracking-wider;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .neon-line {
+    @apply absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-300;
+    transform: translateX(-50%);
+    box-shadow: 0 0 8px var(--color-primary);
+  }
+  .card-link:hover .neon-line {
+    @apply w-4/5;
+  }
+  @media (min-width: 768px) {
+    .image {
+      @apply h-32;
+    }
+    .title {
+      @apply text-lg;
+    }
+  }
+</style>

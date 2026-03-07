@@ -1,0 +1,62 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb-nav">
+  <ol class="breadcrumb">
+    <li>
+      <a href="/">TOP</a>
+    </li>
+    {items.map((item) => (
+      <li>
+        {item.href ? (
+          <a href={item.href}>{item.label}</a>
+        ) : (
+          <span>{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  @reference "../styles/global.css";
+  .breadcrumb-nav {
+    @apply w-full overflow-x-scroll whitespace-nowrap;
+    scrollbar-width: none;
+  }
+  .breadcrumb-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .breadcrumb {
+    @apply flex py-4 overflow-x-scroll whitespace-nowrap text-sm;
+    color: var(--theme-text-faint);
+  }
+  .breadcrumb > li {
+    @apply flex items-center;
+  }
+  .breadcrumb > li + li:before {
+    content: '\227B';
+    @apply mx-2;
+    color: var(--theme-text-faint);
+  }
+  .breadcrumb > li a {
+    @apply font-medium no-underline;
+    color: var(--theme-link);
+  }
+  .breadcrumb > li a:hover {
+    @apply text-primary;
+  }
+  .breadcrumb > li span {
+    color: var(--theme-text-muted);
+  }
+</style>

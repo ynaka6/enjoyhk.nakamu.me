@@ -11,7 +11,7 @@ status: published
 
 ## はじめに
 
-香港生活4年目のなかむ（[@nakanakamu0828](https://twitter.com/nakanakamu0828)）です。  
+香港生活4年目のなかむです。  
 
 彩明商場内にある彩明街市で「**河粉**」を食べてきました。  
 [河粉](https://ja.wikipedia.org/wiki/%E6%B2%B3%E7%B2%89)とは
