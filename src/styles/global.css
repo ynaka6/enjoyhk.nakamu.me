@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 font-sans;
+}
+
+a {
+  @apply text-primary;
+}
+
+a[target="_blank"]:not(.none-external-link)::after {
+  content: "";
+  display: inline-block;
+  top: 0em;
+  left: 0em;
+  width: 0.8em;
+  height: 0.8em;
+  background-image: url("data:image/svg+xml;utf8,<svg color=\"red\" xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" viewBox=\"0 0 1792 1792\" fill=\"currentColor\"><path d=\"M1408 928v320q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h704q14 0 23 9t9 23v64q0 14-9 23t-23 9h-704q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-320q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10l-114-114q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z\"></path></svg>");
+  background-size: 0.8em 0.8em;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+svg {
+  @apply inline-block;
+}
+
+.logo {
+  @apply no-underline text-black relative;
+}
+.logo:before {
+  content: '';
+  z-index: -1;
+  top: -6px;
+  left: -10px;
+  @apply absolute bg-primary p-5 rounded-full opacity-75;
+}
+.logo > sup {
+  text-shadow: none;
+  top: -1em;
+  @apply text-gray-700 text-xs;
+}
+
+/* Post content styles */
+.post-content h2 {
+  @apply mt-6 mb-2 font-bold text-2xl;
+}
+.post-content h2:first-child {
+  @apply text-center;
+}
+.post-content h2:first-child + ul {
+  margin-top: -4rem;
+  @apply pt-20 pb-5 pl-10 mb-10 ml-0 bg-gray-100 border leading-loose;
+}
+.post-content h3 {
+  @apply my-2 font-bold text-xl;
+}
+.post-content p,
+.post-content ul,
+.post-content > div {
+  @apply mb-4;
+}
+.post-content blockquote {
+  @apply relative italic text-gray-600 bg-gray-200 mb-4 py-4 px-10;
+}
+.post-content blockquote:before {
+  content: '"';
+  @apply inline-block absolute text-gray-700 text-3xl top-0 left-0 pl-4 pt-2;
+}
+.post-content blockquote p {
+  @apply p-0 mt-4;
+}
+.post-content ul {
+  list-style-type: disc;
+  padding-left: theme('padding.6');
+}
+.post-content ol {
+  list-style-type: decimal;
+  padding-left: theme('padding.6');
+}
+.post-content table {
+  @apply border w-full my-6;
+}
+.post-content table > thead > tr > th,
+.post-content table > tbody > tr > th {
+  @apply text-gray-800 bg-gray-400 border p-2;
+}
+.post-content table > tbody > tr > td {
+  @apply border p-2;
+}
+.post-content table > tbody > tr > td:first-child {
+  @apply whitespace-nowrap;
+}
+.post-content img {
+  @apply my-4;
+}
+
+/* Syntax highlighting - using Astro's built-in shiki */
+pre {
+  @apply p-4 rounded mb-4 overflow-x-auto;
+}
+code {
+  @apply text-sm;
+}

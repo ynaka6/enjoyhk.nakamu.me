@@ -1,0 +1,49 @@
+---
+---
+
+<footer>
+  <div class="footer-container">
+    <div class="leader-board">
+      <a href="https://overseas.blogmura.com/hongkong/ranking.html" target="_blank" rel="nofollow noopener noreferrer" class="none-external-link">
+        <img src="https://b.blogmura.com/overseas/hongkong/88_31.gif" alt="にほんブログ村 海外生活ブログ 香港情報へ" width="88" height="31" />
+      </a>
+    </div>
+    <p class="copyright">
+      &copy; {new Date().getFullYear()} <a href="https://nakamu.life/" target="_blank" rel="nofollow noopener noreferrer">nakamu</a>. All rights reserved.
+    </p>
+    <p class="made-with">
+      Made with&nbsp;
+      <a href="https://astro.build/" target="_blank" rel="nofollow noopener noreferrer">Astro</a>
+      &nbsp;&&nbsp;
+      <a href="https://www.netlify.com/" target="_blank" rel="nofollow noopener noreferrer">Netlify</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer-container {
+    @apply mt-10 p-6 mx-auto px-4;
+  }
+  .leader-board {
+    @apply flex flex-row justify-center mt-4 mb-10;
+  }
+  .copyright {
+    @apply w-full text-xs text-center;
+  }
+  .made-with {
+    @apply flex items-center justify-center text-xs text-center mt-4;
+  }
+  @media (min-width: 640px) {
+    .footer-container { max-width: 640px; }
+    .copyright { @apply text-sm; }
+  }
+  @media (min-width: 768px) {
+    .footer-container { max-width: 768px; }
+  }
+  @media (min-width: 1024px) {
+    .footer-container { max-width: 1024px; }
+  }
+  @media (min-width: 1280px) {
+    .footer-container { max-width: 1280px; }
+  }
+</style>
