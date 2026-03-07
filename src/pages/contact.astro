@@ -11,39 +11,19 @@ import Breadcrumb from '../components/Breadcrumb.astro';
   <form name="contact" method="POST" data-netlify="true" class="max-w-2xl mx-auto">
     <input type="hidden" name="form-name" value="contact" />
     <div class="mb-6">
-      <label for="name" class="block text-sm font-bold text-gray-300 mb-2">お名前</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        class="form-input"
-      />
+      <label for="name" class="form-label">お名前</label>
+      <input type="text" id="name" name="name" required class="form-input" />
     </div>
     <div class="mb-6">
-      <label for="email" class="block text-sm font-bold text-gray-300 mb-2">メールアドレス</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        class="form-input"
-      />
+      <label for="email" class="form-label">メールアドレス</label>
+      <input type="email" id="email" name="email" required class="form-input" />
     </div>
     <div class="mb-6">
-      <label for="content" class="block text-sm font-bold text-gray-300 mb-2">お問い合わせ内容</label>
-      <textarea
-        id="content"
-        name="content"
-        rows="8"
-        required
-        class="form-input"
-      ></textarea>
+      <label for="content" class="form-label">お問い合わせ内容</label>
+      <textarea id="content" name="content" rows="8" required class="form-input"></textarea>
     </div>
     <div class="text-center">
-      <button type="submit" class="submit-btn">
-        送信する
-      </button>
+      <button type="submit" class="submit-btn">送信する</button>
     </div>
   </form>
 </BaseLayout>
@@ -51,25 +31,32 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 <style>
   @reference "../styles/global.css";
   .page-title {
-    @apply text-center w-full font-bold mb-10 text-3xl text-white;
+    @apply text-center w-full font-bold mb-10 text-3xl;
+    color: var(--theme-text-heading);
+  }
+  .form-label {
+    @apply block text-sm font-bold mb-2;
+    color: var(--theme-text-muted);
   }
   .form-input {
-    @apply w-full px-4 py-3 rounded-lg text-gray-200;
-    background: var(--color-dark-card);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply w-full px-4 py-3 rounded-lg;
+    color: var(--theme-text);
+    background: var(--theme-card);
+    border: 1px solid var(--theme-border-strong);
+    transition: border-color 0.3s, box-shadow 0.3s;
   }
   .form-input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 10px rgba(255, 70, 70, 0.3);
+    box-shadow: 0 0 10px var(--theme-glow-primary-line);
   }
   .submit-btn {
     @apply px-8 py-3 text-white font-bold rounded-full cursor-pointer transition-all duration-300;
     background: var(--color-primary);
     border: none;
-    box-shadow: 0 0 10px rgba(255, 70, 70, 0.3);
+    box-shadow: 0 0 10px var(--theme-glow-primary-line);
   }
   .submit-btn:hover {
-    box-shadow: 0 0 25px rgba(255, 70, 70, 0.6);
+    box-shadow: 0 0 25px var(--theme-glow-primary);
   }
 </style>

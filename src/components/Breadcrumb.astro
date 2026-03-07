@@ -38,22 +38,25 @@ const { items } = Astro.props;
     display: none;
   }
   .breadcrumb {
-    @apply flex text-gray-500 py-4 overflow-x-scroll whitespace-nowrap text-sm;
+    @apply flex py-4 overflow-x-scroll whitespace-nowrap text-sm;
+    color: var(--theme-text-faint);
   }
   .breadcrumb > li {
     @apply flex items-center;
   }
   .breadcrumb > li + li:before {
     content: '\227B';
-    @apply mx-2 text-gray-600;
+    @apply mx-2;
+    color: var(--theme-text-faint);
   }
   .breadcrumb > li a {
-    @apply font-medium no-underline text-neon-cyan;
+    @apply font-medium no-underline;
+    color: var(--theme-link);
   }
   .breadcrumb > li a:hover {
     @apply text-primary;
   }
   .breadcrumb > li span {
-    @apply text-gray-300;
+    color: var(--theme-text-muted);
   }
 </style>

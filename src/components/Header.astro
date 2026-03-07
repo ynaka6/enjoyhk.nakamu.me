@@ -7,16 +7,34 @@ import { siteMetadata, categories } from '../lib/data';
     <a href="/" class="logo">
       <span class="logo-text">Enjoy</span><span class="logo-hk">HK</span>
     </a>
-    <nav class="nav-links">
-      {categories.map((cat) => (
-        <a href={`/category/${cat.slug}/posts`} class="nav-link">{cat.name}</a>
-      ))}
-    </nav>
-    <button class="menu-toggle" aria-label="メニュー" id="menuToggle">
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-      <span class="menu-bar"></span>
-    </button>
+    <div class="header-right">
+      <nav class="nav-links">
+        {categories.map((cat) => (
+          <a href={`/category/${cat.slug}/posts`} class="nav-link">{cat.name}</a>
+        ))}
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="テーマ切替">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="menu-toggle" aria-label="メニュー" id="menuToggle">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
   </div>
   <nav class="mobile-nav" id="mobileNav">
     {categories.map((cat) => (
@@ -33,14 +51,25 @@ import { siteMetadata, categories } from '../lib/data';
     nav?.classList.toggle('open');
     toggle.classList.toggle('open');
   });
+
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
 </script>
 
 <style>
   @reference "../styles/global.css";
   .header {
-    @apply fixed w-full z-50 top-0 border-b border-gray-800;
-    background: rgba(10, 10, 15, 0.92);
+    @apply fixed w-full z-50 top-0;
+    background: var(--theme-header-bg);
+    border-bottom: 1px solid var(--theme-header-border);
     backdrop-filter: blur(12px);
+    transition: background 0.3s, border-color 0.3s;
   }
   .header-container {
     @apply max-w-5xl mx-auto flex items-center justify-between px-4 py-3;
@@ -49,27 +78,46 @@ import { siteMetadata, categories } from '../lib/data';
     @apply flex items-baseline gap-0.5 no-underline;
   }
   .logo-text {
-    @apply text-2xl font-bold text-white;
+    @apply text-2xl font-bold;
+    color: var(--theme-text-heading);
   }
   .logo-hk {
     @apply text-2xl font-bold text-primary;
-    text-shadow: 0 0 10px var(--color-primary), 0 0 30px rgba(255, 70, 70, 0.5);
+    text-shadow: var(--theme-neon-text);
+  }
+  .header-right {
+    @apply flex items-center gap-4;
   }
   .nav-links {
     @apply hidden items-center gap-6;
   }
   .nav-link {
-    @apply text-sm font-medium text-gray-300 no-underline transition-colors;
+    @apply text-sm font-medium no-underline transition-colors;
+    color: var(--theme-text-muted);
   }
   .nav-link:hover {
     @apply text-primary;
-    text-shadow: 0 0 8px rgba(255, 70, 70, 0.5);
+    text-shadow: 0 0 8px var(--theme-glow-primary);
   }
+  .theme-toggle {
+    @apply bg-transparent border-none cursor-pointer p-1.5 rounded-full transition-all duration-300;
+    color: var(--theme-text-muted);
+  }
+  .theme-toggle:hover {
+    color: var(--color-primary);
+  }
+  /* Dark mode: show sun icon, hide moon */
+  :global(:root) .icon-sun { display: block; }
+  :global(:root) .icon-moon { display: none; }
+  /* Light mode: show moon icon, hide sun */
+  :global([data-theme="light"]) .icon-sun { display: none; }
+  :global([data-theme="light"]) .icon-moon { display: block; }
   .menu-toggle {
     @apply flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-1;
   }
   .menu-bar {
-    @apply block w-6 h-0.5 bg-gray-300 transition-all duration-300;
+    @apply block w-6 h-0.5 transition-all duration-300;
+    background: var(--theme-text-muted);
   }
   .menu-toggle.open .menu-bar:nth-child(1) {
     transform: rotate(45deg) translate(4px, 4px);
@@ -81,14 +129,17 @@ import { siteMetadata, categories } from '../lib/data';
     transform: rotate(-45deg) translate(4px, -4px);
   }
   .mobile-nav {
-    @apply hidden flex-col px-4 pb-4 gap-1 border-t border-gray-800;
-    background: rgba(10, 10, 15, 0.95);
+    @apply hidden flex-col px-4 pb-4 gap-1;
+    background: var(--theme-header-bg);
+    border-top: 1px solid var(--theme-header-border);
   }
   .mobile-nav.open {
     @apply flex;
   }
   .mobile-nav-link {
-    @apply py-2 text-gray-300 no-underline text-sm font-medium border-b border-gray-800;
+    @apply py-2 no-underline text-sm font-medium;
+    color: var(--theme-text-muted);
+    border-bottom: 1px solid var(--theme-border);
   }
   .mobile-nav-link:hover {
     @apply text-primary;

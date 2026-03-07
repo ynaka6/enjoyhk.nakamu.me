@@ -34,8 +34,10 @@
 <style>
   @reference "../styles/global.css";
   .footer {
-    @apply border-t border-gray-800 mt-16;
-    background: var(--color-dark-card);
+    @apply mt-16;
+    background: var(--theme-card);
+    border-top: 1px solid var(--theme-border-strong);
+    transition: background 0.3s, border-color 0.3s;
   }
   .footer-container {
     @apply max-w-5xl mx-auto px-4 py-10;
@@ -47,32 +49,37 @@
     @apply flex flex-col gap-1;
   }
   .brand-text {
-    @apply text-xl font-bold text-white;
+    @apply text-xl font-bold;
+    color: var(--theme-text-heading);
   }
   .brand-hk {
     @apply text-xl font-bold text-primary;
-    text-shadow: 0 0 10px var(--color-primary);
+    text-shadow: var(--theme-neon-text);
   }
   .brand-desc {
-    @apply text-sm text-gray-500 mt-1;
+    @apply text-sm mt-1;
+    color: var(--theme-text-faint);
   }
   .footer-links {
     @apply flex flex-wrap gap-4;
   }
   .footer-links a {
-    @apply text-sm text-gray-400 no-underline;
+    @apply text-sm no-underline;
+    color: var(--theme-text-muted);
   }
   .footer-links a:hover {
     @apply text-primary;
   }
   .footer-divider {
-    @apply my-6 border-t border-gray-800;
+    @apply my-6;
+    border-top: 1px solid var(--theme-border-strong);
   }
   .footer-bottom {
     @apply flex flex-col gap-4 items-center;
   }
   .copyright {
-    @apply text-xs text-gray-600;
+    @apply text-xs;
+    color: var(--theme-text-faint);
   }
   @media (min-width: 768px) {
     .footer-top {

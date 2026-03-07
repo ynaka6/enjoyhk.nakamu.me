@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="ページが見つかりません">
   <div class="text-center py-20">
     <div class="neon-404">404</div>
-    <p class="text-gray-400 mb-8 text-lg">お探しのページが見つかりませんでした。</p>
+    <p class="desc">お探しのページが見つかりませんでした。</p>
     <a href="/" class="home-link">
       トップページへ戻る
     </a>
@@ -19,15 +19,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-primary);
     text-shadow: 0 0 20px var(--color-primary), 0 0 40px var(--color-primary), 0 0 80px var(--color-neon-pink);
   }
+  .desc {
+    @apply mb-8 text-lg;
+    color: var(--theme-text-muted);
+  }
   .home-link {
     @apply inline-block px-8 py-3 text-sm font-bold no-underline rounded-full transition-all duration-300;
-    color: var(--color-neon-cyan);
-    border: 1px solid var(--color-neon-cyan);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    color: var(--theme-link);
+    border: 1px solid var(--theme-link);
   }
   .home-link:hover {
     @apply text-white;
-    background: rgba(0, 240, 255, 0.15);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    background: var(--theme-link);
+    box-shadow: 0 0 20px var(--theme-glow-primary);
   }
 </style>

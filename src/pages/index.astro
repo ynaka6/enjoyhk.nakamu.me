@@ -95,11 +95,11 @@ const gridPosts = posts.slice(1, 13);
   }
   .hero-placeholder {
     @apply w-full h-full;
-    background: linear-gradient(135deg, var(--color-dark-surface) 0%, var(--color-dark-card) 100%);
+    background: linear-gradient(135deg, var(--theme-surface) 0%, var(--theme-card) 100%);
   }
   .hero-overlay {
     @apply absolute inset-0;
-    background: linear-gradient(to top, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0.1) 60%);
+    background: linear-gradient(to top, var(--theme-overlay-from) 0%, var(--theme-overlay-to) 60%);
   }
   .hero-content {
     @apply absolute bottom-0 left-0 right-0 p-6;
@@ -107,7 +107,7 @@ const gridPosts = posts.slice(1, 13);
   .hero-category {
     @apply inline-block px-3 py-1 text-xs font-bold text-white rounded-full mb-3;
     background: var(--color-primary);
-    box-shadow: 0 0 12px rgba(255, 70, 70, 0.5);
+    box-shadow: 0 0 12px var(--theme-glow-primary);
   }
   .hero-title {
     @apply text-xl font-bold text-white mb-2 leading-tight;
@@ -124,7 +124,7 @@ const gridPosts = posts.slice(1, 13);
     @apply text-xs text-gray-400;
   }
   .hero-link:hover .hero-overlay {
-    background: linear-gradient(to top, rgba(255, 70, 70, 0.3) 0%, rgba(10, 10, 15, 0.1) 60%);
+    background: linear-gradient(to top, rgba(255, 70, 70, 0.3) 0%, var(--theme-overlay-to) 60%);
   }
 
   /* Categories */
@@ -140,13 +140,14 @@ const gridPosts = posts.slice(1, 13);
     @apply flex items-center gap-4 mb-6;
   }
   .section-title-text {
-    @apply text-lg font-bold text-white tracking-widest uppercase;
-    text-shadow: 0 0 10px rgba(255, 70, 70, 0.4);
+    @apply text-lg font-bold tracking-widest uppercase;
+    color: var(--theme-text-heading);
+    text-shadow: var(--theme-neon-text);
   }
   .section-title-line {
     @apply flex-1 h-px;
     background: linear-gradient(to right, var(--color-primary), transparent);
-    box-shadow: 0 0 5px rgba(255, 70, 70, 0.3);
+    box-shadow: 0 0 5px var(--theme-glow-primary-line);
   }
 
   /* Posts Grid */
@@ -162,12 +163,12 @@ const gridPosts = posts.slice(1, 13);
     @apply inline-block px-8 py-3 text-sm font-bold no-underline rounded-full transition-all duration-300;
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
-    box-shadow: 0 0 10px rgba(255, 70, 70, 0.2);
+    box-shadow: 0 0 10px var(--theme-glow-primary-soft);
   }
   .more-button:hover {
     @apply text-white;
     background: var(--color-primary);
-    box-shadow: 0 0 20px rgba(255, 70, 70, 0.5);
+    box-shadow: 0 0 20px var(--theme-glow-primary);
   }
 
   @media (min-width: 768px) {

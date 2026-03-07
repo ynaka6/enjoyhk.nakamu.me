@@ -32,6 +32,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.json" />
 
+  <!-- Prevent FOUC: apply theme before render -->
+  <script is:inline>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <!-- OGP -->
   <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={pageDescription} />

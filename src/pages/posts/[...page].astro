@@ -55,13 +55,14 @@ const { page } = Astro.props;
     @apply flex items-center gap-4 mb-6;
   }
   .section-title-text {
-    @apply text-lg font-bold text-white tracking-widest uppercase;
-    text-shadow: 0 0 10px rgba(255, 70, 70, 0.4);
+    @apply text-lg font-bold tracking-widest uppercase;
+    color: var(--theme-text-heading);
+    text-shadow: var(--theme-neon-text);
   }
   .section-title-line {
     @apply flex-1 h-px;
     background: linear-gradient(to right, var(--color-primary), transparent);
-    box-shadow: 0 0 5px rgba(255, 70, 70, 0.3);
+    box-shadow: 0 0 5px var(--theme-glow-primary-line);
   }
   .posts-grid {
     @apply grid grid-cols-1 gap-4;

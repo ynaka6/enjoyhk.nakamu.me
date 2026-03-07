@@ -23,7 +23,7 @@ const nextUrl = currentPage < totalPages
     ) : (
       <span></span>
     )}
-    <span class="text-sm text-gray-500">{currentPage} / {totalPages}</span>
+    <span class="pag-info">{currentPage} / {totalPages}</span>
     {nextUrl ? (
       <a href={nextUrl} class="pag-link">
         次のページ &raquo;
@@ -44,6 +44,10 @@ const nextUrl = currentPage < totalPages
   .pag-link:hover {
     @apply text-white;
     background: var(--color-primary);
-    box-shadow: 0 0 15px rgba(255, 70, 70, 0.4);
+    box-shadow: 0 0 15px var(--theme-glow-primary);
+  }
+  .pag-info {
+    @apply text-sm;
+    color: var(--theme-text-faint);
   }
 </style>

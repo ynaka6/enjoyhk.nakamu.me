@@ -67,14 +67,13 @@ const tagName = tag?.name || slug;
     @apply flex items-center gap-4 mb-6;
   }
   .section-title-text {
-    @apply text-lg font-bold text-white tracking-widest;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
-    color: var(--color-neon-cyan);
+    @apply text-lg font-bold tracking-widest;
+    color: var(--theme-tag-color);
+    text-shadow: var(--theme-neon-text);
   }
   .section-title-line {
     @apply flex-1 h-px;
-    background: linear-gradient(to right, var(--color-neon-cyan), transparent);
-    box-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+    background: linear-gradient(to right, var(--theme-tag-color), transparent);
   }
   .posts-grid {
     @apply grid grid-cols-1 gap-4;

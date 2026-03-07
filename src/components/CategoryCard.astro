@@ -39,16 +39,16 @@ const imageSrc = imageMap[slug] || '/images/category/other.jpg';
   }
   .overlay {
     @apply absolute top-0 left-0 w-full h-full transition-opacity duration-300;
-    background: linear-gradient(to top, rgba(10, 10, 15, 0.9) 0%, rgba(10, 10, 15, 0.3) 100%);
+    background: linear-gradient(to top, var(--theme-overlay-from) 0%, var(--theme-overlay-to) 100%);
   }
   .card-link:hover .overlay {
-    background: linear-gradient(to top, rgba(255, 70, 70, 0.6) 0%, rgba(10, 10, 15, 0.2) 100%);
+    background: linear-gradient(to top, rgba(255, 70, 70, 0.6) 0%, var(--theme-overlay-to) 100%);
   }
   .title {
     @apply absolute w-full text-center text-sm text-white font-bold tracking-wider;
     top: 50%;
     transform: translateY(-50%);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   .neon-line {
     @apply absolute bottom-0 left-1/2 h-0.5 w-0 bg-primary transition-all duration-300;
